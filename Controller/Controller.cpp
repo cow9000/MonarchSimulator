@@ -9,7 +9,7 @@
 #include "Headers/Controller.hpp"
 
 Controller::Controller(){
-    window.create(sf::VideoMode(640,480), "Bonini's Paradox");
+    window.create(sf::VideoMode(640,480), "Kingdom Simulator");
     
     
     //Start the game

@@ -18,7 +18,7 @@ MainMenuState::MainMenuState(StateManager* stateManager){
 	this->titleFont.loadFromFile("Assets/Fonts/Gasalt-Regular.ttf");
 	this->buttonSelected = 0;
 
-	mainTitle.setString("Bonini's Paradox");
+	mainTitle.setString("Kingdom Simulator");
 	mainTitle.setCharacterSize(64);
 	mainTitle.setFont(titleFont);
 
