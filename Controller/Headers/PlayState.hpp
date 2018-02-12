@@ -19,11 +19,16 @@ public:
     void updateState(sf::RenderTarget &renderWindow);
     void renderState(sf::RenderTarget &renderWindow);
 private:
+    void startOfDay();
+    void endOfDay();
+
     bool changeWindowSize;
 
     int population;
     int happiness;
     int gold;
+
+    int minHappiness;
 
 };
 

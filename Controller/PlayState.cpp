@@ -38,3 +38,12 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 void PlayState::renderState(sf::RenderTarget &renderWindow){
     
 }
+
+
+void PlayState::startOfDay(){
+
+}
+
+void PlayState::endOfDay(){
+
+}
