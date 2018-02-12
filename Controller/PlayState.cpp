@@ -12,6 +12,10 @@
 PlayState::PlayState(StateManager* stateManager){
 	this->stateManager = stateManager;
 	this->changeWindowSize = false;
+
+	this->population = 100;
+	this->happiness = 100;
+	this->gold = 200;
     
 }
 

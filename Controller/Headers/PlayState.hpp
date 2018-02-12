@@ -21,6 +21,10 @@ public:
 private:
     bool changeWindowSize;
 
+    int population;
+    int happiness;
+    int gold;
+
 };
 
 #endif /* PlayState_hpp */
