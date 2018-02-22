@@ -30,7 +30,8 @@ class Controller{
     
         sf::RenderWindow window;
         StateManager stateManager;
-        sf::Music gameMusic;
+        sf::Sound gameMusic;
+        sf::SoundBuffer buffer;
 };
 
 #endif /* Controller_hpp */

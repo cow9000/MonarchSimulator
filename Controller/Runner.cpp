@@ -7,9 +7,11 @@
 //
 
 #include "Headers/Controller.hpp"
+#include <iostream>
 
 int main(){
 	std::srand (std::time(NULL));
+
     Controller app;
 
 }

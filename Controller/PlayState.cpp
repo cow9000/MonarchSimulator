@@ -19,7 +19,7 @@ PlayState::PlayState(StateManager* stateManager){
 	this->minHappiness = 80 + (population/5);
 
 
-	this->defaultFont.loadFromFile("Assets/Fonts/trench100free.ttf");
+	this->defaultFont.loadFromFile("Assets/Fonts/GameFont.ttf");
 
 	popText.setFont(defaultFont);
 	happinessText.setFont(defaultFont);

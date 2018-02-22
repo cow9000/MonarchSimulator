@@ -14,8 +14,8 @@
 
 MainMenuState::MainMenuState(StateManager* stateManager){
 	this->stateManager = stateManager;
-	this->mainFont.loadFromFile("Assets/Fonts/trench100free.ttf");
-	this->titleFont.loadFromFile("Assets/Fonts/trench100free.ttf");
+	this->mainFont.loadFromFile("Assets/Fonts/GameFont.ttf");
+	this->titleFont.loadFromFile("Assets/Fonts/GameFont.ttf");
 	this->buttonSelected = 0;
 
 	mainTitle.setString("Kingdom Simulator");
@@ -58,7 +58,7 @@ void MainMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindo
         	if(buttonSelected == 1){
         		stateManager->setCurrentState(States::implementedStates::PLAY);
         	}else if(buttonSelected == 2){
-        		stateManager->setCurrentState(States::implementedStates::OPTIONS);
+        		//stateManager->setCurrentState(States::implementedStates::OPTIONS);
         	}else if(buttonSelected == 3){
 
         	}
@@ -116,6 +116,6 @@ void MainMenuState::renderState(sf::RenderTarget &renderWindow){
 
 	renderWindow.draw(mainTitle);
     renderWindow.draw(titleOne);
-    renderWindow.draw(titleTwo);
-    renderWindow.draw(titleThree);
+    //renderWindow.draw(titleTwo);
+    //renderWindow.draw(titleThree);
 }

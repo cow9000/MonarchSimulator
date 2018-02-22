@@ -9,16 +9,22 @@
 #include "Headers/Controller.hpp"
 
 Controller::Controller(){
-    window.create(sf::VideoMode(640,480), "Kingdom Simulator");
-    //gameMusic.openFromFile("Assets/music.mp3");
-    gameMusic.setLoop(true);
-    gameMusic.play();
-    
-    //Start the game
+
+	window.create(sf::VideoMode(640,480), "Kingdom Simulator");
+	buffer.loadFromFile("Assets/music.ogg");
+	gameMusic.setBuffer(buffer);
+
+	gameMusic.play();
+	gameMusic.setLoop(true);
+	//gameMusic.openFromFile("Assets/music.ogg");
+	//gameMusic.play();
+
+	//Start the game
     start();
 }
 
 void Controller::start(){
+
     sf::Clock fpsClock;
 	sf::Time accumulator = sf::Time::Zero;
 	sf::Time ups = sf::seconds(1.f / 60.f);
@@ -35,10 +41,11 @@ void Controller::start(){
             updateWindow(accumulator);
             
         }
-
         drawWindow();
         accumulator += fpsClock.restart();
     }
+
+
 }
 
 void Controller::processWindow(){
@@ -60,6 +67,8 @@ void Controller::processWindow(){
 void Controller::updateWindow(sf::Time timePerFrame){
     //Put updating for game states in here
     stateManager.returnCurrentState().updateState(window);
+
+
 }
 
 void Controller::drawWindow(){
