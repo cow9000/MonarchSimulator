@@ -22,6 +22,9 @@ private:
     void startOfDay();
     void endOfDay();
 
+    //Rendering
+    void drawGUI(sf::RenderTarget &renderWindow);
+
     bool changeWindowSize;
 
     int population;
@@ -29,6 +32,13 @@ private:
     int gold;
 
     int minHappiness;
+
+    sf::Text popText;
+    sf::Text happinessText;
+    sf::Text goldText;
+
+    sf::Font defaultFont;
+
 
 };
 

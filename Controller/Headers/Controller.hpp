@@ -10,6 +10,7 @@
 #define Controller_hpp
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "StateManager.hpp"
 
 class Controller{
@@ -29,6 +30,7 @@ class Controller{
     
         sf::RenderWindow window;
         StateManager stateManager;
+        sf::Music gameMusic;
 };
 
 #endif /* Controller_hpp */

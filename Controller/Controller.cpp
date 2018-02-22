@@ -10,7 +10,9 @@
 
 Controller::Controller(){
     window.create(sf::VideoMode(640,480), "Kingdom Simulator");
-    
+    //gameMusic.openFromFile("Assets/music.mp3");
+    gameMusic.setLoop(true);
+    gameMusic.play();
     
     //Start the game
     start();

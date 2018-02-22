@@ -14,8 +14,8 @@
 
 MainMenuState::MainMenuState(StateManager* stateManager){
 	this->stateManager = stateManager;
-	this->mainFont.loadFromFile("Assets/Fonts/Gasalt-Thin.ttf");
-	this->titleFont.loadFromFile("Assets/Fonts/Gasalt-Regular.ttf");
+	this->mainFont.loadFromFile("Assets/Fonts/trench100free.ttf");
+	this->titleFont.loadFromFile("Assets/Fonts/trench100free.ttf");
 	this->buttonSelected = 0;
 
 	mainTitle.setString("Kingdom Simulator");
