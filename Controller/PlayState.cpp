@@ -43,8 +43,8 @@ PlayState::PlayState(StateManager* stateManager){
 	goldText.setCharacterSize(20);
 
 	this->showYesOrNo = true;
-	this->showYes = false;
-	this->showNo = false;
+	this->chosenYes = false;
+	this->chosenNo = false;
 	this->rotateYesOrNo = 0;
 	this->backwards = false;
 
@@ -62,6 +62,20 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }else if(event.type == sf::Event::Resized){
     	renderWindow.setView(sf::View(sf::FloatRect(0.f,0.f,event.size.width,event.size.height)));
 
+    }else if(event.type == sf::Event::KeyPressed){
+    	if(event.key.code == sf::Keyboard::Y){
+    		if(showYesOrNo){
+    			if(!chosenYes && !chosenNo){
+    				chosenYes = true;
+    			}
+    		}
+    	}else if(event.key.code == sf::Keyboard::N){
+    		if(showYesOrNo){
+				if(!chosenYes && !chosenNo){
+					chosenNo = true;
+				}
+			}
+    	}
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
@@ -72,6 +86,10 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 	popText.setPosition(70, renderWindow.getSize().y-150);
 	happinessText.setPosition(70, renderWindow.getSize().y-100);
 	goldText.setPosition(70, renderWindow.getSize().y-50);
+
+
+
+
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
 
@@ -89,8 +107,16 @@ void PlayState::drawNPC(sf::RenderTarget &renderWindow){
 
 	if(showYesOrNo){
 		sf::Texture yesNoTexture;
-		yesNoTexture.loadFromFile("Assets/YesOrNo.png");
+		if(chosenYes){
+			yesNoTexture.loadFromFile("Assets/Gameplay/Yes.png");
+		}else if(chosenNo){
+			yesNoTexture.loadFromFile("Assets/Gameplay/No.png");
+		}else{
+			yesNoTexture.loadFromFile("Assets/Gameplay/YesOrNo.png");
+		}
 		yesOrNo.setTexture(yesNoTexture);
+
+		yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
 
 		yesOrNo.setRotation(rotateYesOrNo);
 
@@ -100,7 +126,8 @@ void PlayState::drawNPC(sf::RenderTarget &renderWindow){
 			rotateYesOrNo += 1;
 		}
 
-		if(rotateYesOrNo > 15 || rotateYesOrNo < -15){
+		if(rotateYesOrNo > 5 || rotateYesOrNo < -5){
+
 			backwards = !backwards;
 		}
 
@@ -197,10 +224,10 @@ void PlayState::drawBackground(sf::RenderTarget &renderWindow){
 	sf::Texture kingTexture;
 	kingTexture.loadFromFile("Assets/Gameplay/King.png");
 
-	sf::Sprite kingSprite(kingTexture);
-	kingSprite.setPosition(0, renderWindow.getSize().y - kingSprite.getLocalBounds().height);
+	King.setTexture(kingTexture);
+	King.setPosition(0, renderWindow.getSize().y - King.getLocalBounds().height);
 
-	renderWindow.draw(kingSprite);
+	renderWindow.draw(King);
 }
 
 void PlayState::drawGUI(sf::RenderTarget &renderWindow){

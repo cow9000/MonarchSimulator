@@ -29,8 +29,8 @@ private:
 
     bool changeWindowSize;
     bool showYesOrNo;
-    bool showYes;
-    bool showNo;
+    bool chosenYes;
+    bool chosenNo;
     //Rotate 15 then rotate to -15
     bool backwards;
     int rotateYesOrNo;
@@ -57,6 +57,8 @@ private:
     sf::Sprite cloud4;
     sf::Sprite cloud5;
     sf::Sprite cloud6;
+
+    sf::Sprite King;
 
 };
 
