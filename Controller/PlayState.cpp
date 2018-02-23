@@ -10,6 +10,15 @@
 #include <iostream>
 
 PlayState::PlayState(StateManager* stateManager){
+
+	cloud1.setPosition(rand()%1500,rand()%1500);
+	cloud2.setPosition(rand()%1500,rand()%1500);
+	cloud3.setPosition(rand()%1500,rand()%1500);
+
+	cloud4.setPosition(rand()%1500,rand()%1500);
+	cloud5.setPosition(rand()%1500,rand()%1500);
+	cloud6.setPosition(rand()%1500,rand()%1500);
+
 	this->stateManager = stateManager;
 	this->changeWindowSize = false;
 
@@ -33,6 +42,11 @@ PlayState::PlayState(StateManager* stateManager){
 	happinessText.setCharacterSize(20);
 	goldText.setCharacterSize(20);
 
+	this->showYesOrNo = true;
+	this->showYes = false;
+	this->showNo = false;
+	this->rotateYesOrNo = 0;
+	this->backwards = false;
 
 
 }
@@ -73,9 +87,29 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 
 void PlayState::drawNPC(sf::RenderTarget &renderWindow){
 
+	if(showYesOrNo){
+		sf::Texture yesNoTexture;
+		yesNoTexture.loadFromFile("Assets/YesOrNo.png");
+		yesOrNo.setTexture(yesNoTexture);
+
+		yesOrNo.setRotation(rotateYesOrNo);
+
+		if(backwards){
+			rotateYesOrNo -= 1;
+		}else{
+			rotateYesOrNo += 1;
+		}
+
+		if(rotateYesOrNo > 15 || rotateYesOrNo < -15){
+			backwards = !backwards;
+		}
+
+		renderWindow.draw(yesOrNo);
+	}
 }
 
 void PlayState::drawBackground(sf::RenderTarget &renderWindow){
+
 
 	sf::Texture skyBackground;
 	skyBackground.loadFromFile("Assets/Gameplay/Sky.png");
@@ -83,6 +117,71 @@ void PlayState::drawBackground(sf::RenderTarget &renderWindow){
 	skyback.setScale(2.0,2.0);
 	renderWindow.draw(skyback);
 
+
+	//Draw clouds
+
+	if(cloud1.getPosition().x > renderWindow.getSize().x){
+		cloud1.setPosition(-rand()%500,rand()%500);
+	}
+
+	if(cloud2.getPosition().x > renderWindow.getSize().x){
+		cloud2.setPosition(-rand()%500,rand()%500);
+	}
+
+	if(cloud3.getPosition().x > renderWindow.getSize().x){
+		cloud3.setPosition(-rand()%500,rand()%500);
+	}
+
+	if(cloud4.getPosition().x > renderWindow.getSize().x){
+		cloud4.setPosition(-rand()%500,rand()%500);
+	}
+
+	if(cloud5.getPosition().x > renderWindow.getSize().x){
+		cloud5.setPosition(-rand()%500,rand()%500);
+	}
+
+	if(cloud6.getPosition().x > renderWindow.getSize().x){
+		cloud6.setPosition(-rand()%500,rand()%500);
+	}
+
+
+	sf::Texture cloudTexture1;
+	cloudTexture1.loadFromFile("Assets/Gameplay/Cloud1.png");
+	cloud1.setTexture(cloudTexture1);
+	if(rand()%2 <= 1){
+		cloud1.setPosition(sf::Vector2f(cloud1.getGlobalBounds().left+1, cloud1.getPosition().y));
+	}
+	renderWindow.draw(cloud1);
+
+	sf::Texture cloudTexture2;
+	cloudTexture2.loadFromFile("Assets/Gameplay/Cloud2.png");
+	cloud2.setTexture(cloudTexture2);
+	cloud2.setPosition(sf::Vector2f(cloud2.getGlobalBounds().left+1, cloud2.getPosition().y));
+	renderWindow.draw(cloud2);
+
+	sf::Texture cloudTexture3;
+	cloudTexture3.loadFromFile("Assets/Gameplay/Cloud3.png");
+	cloud3.setTexture(cloudTexture3);
+	cloud3.setPosition(sf::Vector2f(cloud3.getGlobalBounds().left+1, cloud3.getPosition().y));
+	renderWindow.draw(cloud3);
+
+	sf::Texture cloudTexture4;
+	cloudTexture4.loadFromFile("Assets/Gameplay/Cloud3.png");
+	cloud4.setTexture(cloudTexture4);
+	cloud4.setPosition(sf::Vector2f(cloud4.getGlobalBounds().left+1, cloud4.getPosition().y));
+	renderWindow.draw(cloud4);
+
+	sf::Texture cloudTexture5;
+	cloudTexture5.loadFromFile("Assets/Gameplay/Cloud2.png");
+	cloud5.setTexture(cloudTexture5);
+	cloud5.setPosition(sf::Vector2f(cloud5.getGlobalBounds().left+1, cloud5.getPosition().y));
+	renderWindow.draw(cloud5);
+
+	sf::Texture cloudTexture6;
+	cloudTexture6.loadFromFile("Assets/Gameplay/Cloud1.png");
+	cloud6.setTexture(cloudTexture6);
+	cloud6.setPosition(sf::Vector2f(cloud6.getGlobalBounds().left+1, cloud6.getPosition().y));
+	renderWindow.draw(cloud6);
 
 
 	sf::Texture background1Texture;

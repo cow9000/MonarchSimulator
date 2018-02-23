@@ -28,6 +28,16 @@ private:
     void drawNPC(sf::RenderTarget &renderWindow);
 
     bool changeWindowSize;
+    bool showYesOrNo;
+    bool showYes;
+    bool showNo;
+    //Rotate 15 then rotate to -15
+    bool backwards;
+    int rotateYesOrNo;
+
+    sf::Sprite yes;
+    sf::Sprite no;
+    sf::Sprite yesOrNo;
 
     int population;
     int happiness;
@@ -41,6 +51,12 @@ private:
 
     sf::Font defaultFont;
 
+    sf::Sprite cloud1;
+    sf::Sprite cloud2;
+    sf::Sprite cloud3;
+    sf::Sprite cloud4;
+    sf::Sprite cloud5;
+    sf::Sprite cloud6;
 
 };
 
