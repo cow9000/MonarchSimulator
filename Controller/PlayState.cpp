@@ -51,23 +51,74 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
-	popText.setString("Population:   " + std::to_string(population));
-	happinessText.setString("Happiness:   " + std::to_string(happiness));
-	goldText.setString("Gold:   " + std::to_string(gold));
+	popText.setString(std::to_string(population));
+	happinessText.setString(std::to_string(happiness));
+	goldText.setString(std::to_string(gold));
 
-	popText.setPosition(30, renderWindow.getSize().y-150);
-	happinessText.setPosition(30, renderWindow.getSize().y-100);
-	goldText.setPosition(30, renderWindow.getSize().y-50);
+	popText.setPosition(70, renderWindow.getSize().y-150);
+	happinessText.setPosition(70, renderWindow.getSize().y-100);
+	goldText.setPosition(70, renderWindow.getSize().y-50);
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
+
+
+	sf::Texture background1Texture;
+	background1Texture.loadFromFile("Assets/Gameplay/BackgroundHills.png");
+	sf::Sprite background1(background1Texture);
+
+	background1.setPosition(0, renderWindow.getSize().y - background1.getLocalBounds().height);
+
+	renderWindow.draw(background1);
+
+
+	//Draw game stuff
+	sf::Texture kingTexture;
+	kingTexture.loadFromFile("Assets/Gameplay/King.png");
+
+	sf::Sprite kingSprite(kingTexture);
+	kingSprite.setPosition(0, renderWindow.getSize().y - kingSprite.getLocalBounds().height);
+
+	renderWindow.draw(kingSprite);
+
     //Render GUI
 	drawGUI(renderWindow);
 }
 
 void PlayState::drawGUI(sf::RenderTarget &renderWindow){
+
+
+	sf::Texture GuiTexture;
+	GuiTexture.loadFromFile("Assets/Gameplay/GuiBackground.png");
+
+	sf::Sprite GuiSprite(GuiTexture);
+	GuiSprite.setPosition(0,renderWindow.getSize().y-GuiSprite.getLocalBounds().height-10);
+
+	renderWindow.draw(GuiSprite);
+
+
+	sf::Texture happinessTexture;
+	sf::Texture populationTexture;
+	sf::Texture goldTexture;
+
+	happinessTexture.loadFromFile("Assets/Gameplay/Happiness.png");
+	populationTexture.loadFromFile("Assets/Gameplay/Population.png");
+	goldTexture.loadFromFile("Assets/Gameplay/Gold.png");
+
+	sf::Sprite goldSprite(goldTexture);
+	goldSprite.setPosition(30, goldText.getPosition().y - 5);
+	sf::Sprite populationSprite(populationTexture);
+	populationSprite.setPosition(30, popText.getPosition().y - 5 );
+	sf::Sprite happinessSprite(happinessTexture);
+	happinessSprite.setPosition(30, happinessText.getPosition().y - 5);
+
+	renderWindow.draw(goldSprite);
+	renderWindow.draw(populationSprite);
+	renderWindow.draw(happinessSprite);
 	renderWindow.draw(popText);
 	renderWindow.draw(happinessText);
 	renderWindow.draw(goldText);
+
+
 }
 
 
