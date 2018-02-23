@@ -48,6 +48,8 @@ PlayState::PlayState(StateManager* stateManager){
 	this->rotateYesOrNo = 0;
 	this->backwards = false;
 
+	this->isDusk = false;
+	this->isNight = true;
 
 }
 
@@ -87,7 +89,11 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 	happinessText.setPosition(70, renderWindow.getSize().y-100);
 	goldText.setPosition(70, renderWindow.getSize().y-50);
 
-
+	if(isDusk){
+		isNight = false;
+	}else if(isNight){
+		isDusk = false;
+	}
 
 
 }
@@ -101,6 +107,38 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 
     //Render GUI
 	drawGUI(renderWindow);
+
+
+
+
+	//Draw dusk/night
+	if(isDusk){
+		sf::Texture overlay;
+		overlay.loadFromFile("Assets/Gameplay/Dusk.png");
+		sf::Sprite overlaySprite;
+		overlaySprite.setTexture(overlay);
+		sf::Vector2u targetSize = renderWindow.getSize();
+
+		overlaySprite.setScale(
+		    targetSize.x / overlaySprite.getLocalBounds().width,
+		    targetSize.y / overlaySprite.getLocalBounds().height);
+
+		renderWindow.draw(overlaySprite);
+	}else if(isNight){
+		sf::Texture overlay;
+		overlay.loadFromFile("Assets/Gameplay/Night.png");
+		sf::Sprite overlaySprite;
+		overlaySprite.setTexture(overlay);
+		sf::Vector2u targetSize = renderWindow.getSize();
+
+		overlaySprite.setScale(
+		    targetSize.x / overlaySprite.getLocalBounds().width,
+		    targetSize.y / overlaySprite.getLocalBounds().height);
+
+		renderWindow.draw(overlaySprite);
+	}
+
+
 }
 
 void PlayState::drawNPC(sf::RenderTarget &renderWindow){

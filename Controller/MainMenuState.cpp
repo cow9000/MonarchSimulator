@@ -70,9 +70,9 @@ void MainMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindo
     		if(i == 0){
     			buttonArea = titleOne.getGlobalBounds();
     		}else if(i == 1){
-    			buttonArea = titleTwo.getGlobalBounds();
+    			//buttonArea = titleTwo.getGlobalBounds();
     		}else if(i == 2){
-    			buttonArea = titleThree.getGlobalBounds();
+    			//buttonArea = titleThree.getGlobalBounds();
     		}
 
 
@@ -89,9 +89,9 @@ void MainMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindo
 }
 void MainMenuState::updateState(sf::RenderTarget &renderWindow){
 	mainTitle.setPosition(std::round(renderWindow.getSize().x/2),50);
-	titleOne.setPosition(std::round(renderWindow.getSize().x/2),150);
-	titleTwo.setPosition(std::round(renderWindow.getSize().x/2),250);
-	titleThree.setPosition(std::round(renderWindow.getSize().x/2),350);
+	titleOne.setPosition(std::round(renderWindow.getSize().x/2),std::round(renderWindow.getSize().y/2));
+	//titleTwo.setPosition(std::round(renderWindow.getSize().x/2),250);
+	//titleThree.setPosition(std::round(renderWindow.getSize().x/2),350);
 
 	//Set button colors
 	titleOne.setFillColor(GameManager::buttonUnSelectedColor);

@@ -35,6 +35,10 @@ private:
     bool backwards;
     int rotateYesOrNo;
 
+    //dusk/night
+    bool isDusk;
+    bool isNight;
+
     sf::Sprite yes;
     sf::Sprite no;
     sf::Sprite yesOrNo;
