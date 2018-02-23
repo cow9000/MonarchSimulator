@@ -6,7 +6,6 @@
  */
 
 #include "../Headers/Gameplay/NPC.hpp"
-#include <iostream>
 
 NPC::NPC(std::string name) {
 	// TODO Auto-generated constructor stub
@@ -36,6 +35,12 @@ NPC::NPC(std::string name) {
 	this->drawDialog = false;
 	this->doneDrawingDialog = false;
 	this->dialogTextShown = 0;
+
+	//defaultFont.loadFromFile("Assets/Fonts/font.ttf");
+
+	nameText.setCharacterSize(32);
+	nameText.setFont(defaultFont);
+	nameText.setString(name);
 }
 
 
@@ -77,6 +82,18 @@ void NPC::update(){
 			position.x-=(1);
 		}
 	}
+	//Set text
+	if(drawDialog){
+		std::cout << "DRAW" << std::endl;
+		if(dialogTextShown >= dialogString.length()-1){
+			doneDrawingDialog = true;
+		}else{
+			dialogTextShown++;
+
+			dialogText.setString(dialogString.substr(0,dialogTextShown));
+		}
+
+	}
 
 	//IF IT IS DONE DRAWING DIALOG
 	if(doneDrawingDialog){
@@ -93,7 +110,10 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	target.draw(NPCSprite);
 
 	//DRAW DIALOG
-
+	if(drawDialog){
+		target.draw(nameText);
+		target.draw(dialogText);
+	}
 
 
 
@@ -101,21 +121,22 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
 void NPC::showDialog(){
 	this->drawDialog = true;
-
-	this->doneDrawingDialog = true;
+	this->doneDrawingDialog = false;
+	dialogString = returnDialog();
 }
 
 std::string NPC::returnDialog(){
-	std::string text = "";
+	std::string text = "My name is jimmy";
 
 	return text;
 }
 
 std::string NPC::returnDialog(int response){
-	std::string text = "";
+	std::string text = "My name is jimmy";
 	//0 response means yes,
 	//1 response means no
-
+	doneDrawingDialog = false;
+	doneTalking = false;
 
 	return text;
 
@@ -123,7 +144,6 @@ std::string NPC::returnDialog(int response){
 
 void NPC::dismiss(int response){
 	this->dismissed = true;
-	this->doneTalking = true;
-	returnDialog(response);
+	dialogString = returnDialog(response);
 }
 

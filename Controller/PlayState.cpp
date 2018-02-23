@@ -320,7 +320,7 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 				}
 				yesOrNo.setTexture(yesNoTexture);
 
-				yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
+				yesOrNo.setPosition(King.getLocalBounds().width-80, King.getPosition().y+150);
 
 				yesOrNo.setRotation(rotateYesOrNo);
 

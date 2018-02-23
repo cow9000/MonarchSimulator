@@ -9,6 +9,7 @@
 #define CONTROLLER_GAMEPLAY_NPC_HPP_
 
 #include <String>
+#include <iostream>
 #include <SFML/Graphics.hpp>
 
 class NPC : public sf::Drawable{
@@ -54,6 +55,10 @@ private:
 	int dialogTextShown;
 	bool drawDialog;
 	bool doneDrawingDialog;
+	sf::Font defaultFont;
+	std::string dialogString;
+	sf::Text nameText;
+	sf::Text dialogText;
 };
 
 #endif /* CONTROLLER_GAMEPLAY_NPC_HPP_ */
