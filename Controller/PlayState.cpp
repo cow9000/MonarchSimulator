@@ -142,11 +142,6 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 	//Draw NPCs
 	drawNPC(renderWindow);
 
-    //Render GUI
-	drawGUI(renderWindow);
-
-
-
 
 	//Draw dusk/night
 	if(isDusk){
@@ -176,38 +171,16 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 	}
 
 
+    //Render GUI
+	drawGUI(renderWindow);
+
+
+
+
 }
 
 void PlayState::drawNPC(sf::RenderTarget &renderWindow){
 	if(!dayEnd){
-		if(showYesOrNo){
-			sf::Texture yesNoTexture;
-			if(chosenYes){
-				yesNoTexture.loadFromFile("Assets/Gameplay/Yes.png");
-			}else if(chosenNo){
-				yesNoTexture.loadFromFile("Assets/Gameplay/No.png");
-			}else{
-				yesNoTexture.loadFromFile("Assets/Gameplay/YesOrNo.png");
-			}
-			yesOrNo.setTexture(yesNoTexture);
-
-			yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
-
-			yesOrNo.setRotation(rotateYesOrNo);
-
-			if(backwards){
-				rotateYesOrNo -= 1;
-			}else{
-				rotateYesOrNo += 1;
-			}
-
-			if(rotateYesOrNo > 5 || rotateYesOrNo < -5){
-
-				backwards = !backwards;
-			}
-
-			renderWindow.draw(yesOrNo);
-		}
 
 		renderWindow.draw(*manager.returnCurrentNPC());
 	}
@@ -334,6 +307,36 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 	populationSprite.setPosition(30, popText.getPosition().y - 5 );
 	sf::Sprite happinessSprite(happinessTexture);
 	happinessSprite.setPosition(30, happinessText.getPosition().y - 5);
+
+
+	if(showYesOrNo){
+				sf::Texture yesNoTexture;
+				if(chosenYes){
+					yesNoTexture.loadFromFile("Assets/Gameplay/Yes.png");
+				}else if(chosenNo){
+					yesNoTexture.loadFromFile("Assets/Gameplay/No.png");
+				}else{
+					yesNoTexture.loadFromFile("Assets/Gameplay/YesOrNo.png");
+				}
+				yesOrNo.setTexture(yesNoTexture);
+
+				yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
+
+				yesOrNo.setRotation(rotateYesOrNo);
+
+				if(backwards){
+					rotateYesOrNo -= 1;
+				}else{
+					rotateYesOrNo += 1;
+				}
+
+				if(rotateYesOrNo > 5 || rotateYesOrNo < -5){
+
+					backwards = !backwards;
+				}
+
+				renderWindow.draw(yesOrNo);
+			}
 
 	renderWindow.draw(goldSprite);
 	renderWindow.draw(populationSprite);

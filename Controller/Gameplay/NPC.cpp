@@ -31,7 +31,11 @@ NPC::NPC(std::string name) {
 
 	if(!NPCTexture.loadFromFile(filePath + name + ".png")) NPCTexture.loadFromFile(filePath + "Sir Cluckington.png");
 
-
+	//This is for the Dialog talking tracking, so that after you respond this will show a different dialog from the beginning no input dialog.
+	this->noResponseDialog = 0;
+	this->drawDialog = false;
+	this->doneDrawingDialog = false;
+	this->dialogTextShown = 0;
 }
 
 
@@ -60,7 +64,7 @@ void NPC::update(){
 
 
 	}else{
-		this->doneTalking = true;
+		showDialog();
 		movingIn = false;
 	}
 
@@ -73,6 +77,11 @@ void NPC::update(){
 			position.x-=(1);
 		}
 	}
+
+	//IF IT IS DONE DRAWING DIALOG
+	if(doneDrawingDialog){
+		doneTalking = true;
+	}
 }
 
 void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
@@ -83,6 +92,17 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
 	target.draw(NPCSprite);
 
+	//DRAW DIALOG
+
+
+
+
+}
+
+void NPC::showDialog(){
+	this->drawDialog = true;
+
+	this->doneDrawingDialog = true;
 }
 
 std::string NPC::returnDialog(){
@@ -98,6 +118,7 @@ std::string NPC::returnDialog(int response){
 
 
 	return text;
+
 }
 
 void NPC::dismiss(int response){

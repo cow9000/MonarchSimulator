@@ -32,11 +32,15 @@ private:
 	sf::Clock movementClock;
 	void gatherData();
 	void saveData();
+	void showDialog();
 
 	std::string name;
 
 	sf::Texture NPCTexture;
 	sf::Vector2f position;
+
+	int noResponseDialog;
+
 
 	bool reverseRotate;
 	int rotate;
@@ -45,6 +49,11 @@ private:
 	bool dismissed;
 	bool doneTalking;
 	bool moveOn;
+
+
+	int dialogTextShown;
+	bool drawDialog;
+	bool doneDrawingDialog;
 };
 
 #endif /* CONTROLLER_GAMEPLAY_NPC_HPP_ */
