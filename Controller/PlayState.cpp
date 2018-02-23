@@ -49,7 +49,7 @@ PlayState::PlayState(StateManager* stateManager){
 	this->backwards = false;
 
 	this->isDusk = false;
-	this->isNight = true;
+	this->isNight = false;
 
 }
 

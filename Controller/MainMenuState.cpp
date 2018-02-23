@@ -114,6 +114,44 @@ void MainMenuState::updateState(sf::RenderTarget &renderWindow){
 void MainMenuState::renderState(sf::RenderTarget &renderWindow){
 
 
+	sf::Texture skyBackground;
+	skyBackground.loadFromFile("Assets/Gameplay/Sky.png");
+	sf::Sprite skyback(skyBackground);
+	skyback.setScale(2.0,2.0);
+	renderWindow.draw(skyback);
+
+
+	sf::Texture background1Texture;
+	background1Texture.loadFromFile("Assets/Gameplay/BackgroundHills.png");
+	sf::Sprite background1(background1Texture);
+
+	background1.setPosition(0, renderWindow.getSize().y - background1.getLocalBounds().height);
+
+	renderWindow.draw(background1);
+
+
+	//Draw game stuff
+	sf::Texture kingTexture;
+	kingTexture.loadFromFile("Assets/Gameplay/King.png");
+	sf::Sprite King;
+	King.setTexture(kingTexture);
+	King.setPosition(0, renderWindow.getSize().y - King.getLocalBounds().height);
+
+	renderWindow.draw(King);
+
+	sf::Texture overlay;
+	overlay.loadFromFile("Assets/Gameplay/Night.png");
+	sf::Sprite overlaySprite;
+	overlaySprite.setTexture(overlay);
+	sf::Vector2u targetSize = renderWindow.getSize();
+
+	overlaySprite.setScale(
+		targetSize.x / overlaySprite.getLocalBounds().width,
+		targetSize.y / overlaySprite.getLocalBounds().height);
+
+	renderWindow.draw(overlaySprite);
+
+
 	renderWindow.draw(mainTitle);
     renderWindow.draw(titleOne);
     //renderWindow.draw(titleTwo);
