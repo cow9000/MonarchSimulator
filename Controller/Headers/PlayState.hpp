@@ -10,6 +10,8 @@
 #define PlayState_hpp
 
 #include "State.hpp"
+#include "Gameplay/NPCManager.hpp"
+
 
 class PlayState : public State {
 public:
@@ -21,6 +23,7 @@ public:
 private:
     void startOfDay();
     void endOfDay();
+    bool dayEnd;
 
     //Rendering
     void drawGUI(sf::RenderTarget &renderWindow);
@@ -31,6 +34,7 @@ private:
     bool showYesOrNo;
     bool chosenYes;
     bool chosenNo;
+    bool haveSentChosenSignal;
     //Rotate 15 then rotate to -15
     bool backwards;
     int rotateYesOrNo;
@@ -46,6 +50,8 @@ private:
     int population;
     int happiness;
     int gold;
+
+    NPCManager manager;
 
     int minHappiness;
 

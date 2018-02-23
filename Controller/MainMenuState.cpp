@@ -65,7 +65,7 @@ void MainMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindo
         }
     }else if(event.type == sf::Event::MouseMoved){
     	buttonSelected = 0;
-    	for(int i = 0; i < 3; i++){
+    	for(int i = 0; i < 1; i++){
     		sf::FloatRect buttonArea;
     		if(i == 0){
     			buttonArea = titleOne.getGlobalBounds();

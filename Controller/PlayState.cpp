@@ -23,7 +23,7 @@ PlayState::PlayState(StateManager* stateManager){
 	this->changeWindowSize = false;
 
 	this->population = 100;
-	this->happiness = 100;
+	this->happiness = 105;
 	this->gold = 200;
 	this->minHappiness = 80 + (population/5);
 
@@ -42,15 +42,17 @@ PlayState::PlayState(StateManager* stateManager){
 	happinessText.setCharacterSize(20);
 	goldText.setCharacterSize(20);
 
-	this->showYesOrNo = true;
+	this->showYesOrNo = false;
 	this->chosenYes = false;
 	this->chosenNo = false;
+	this->haveSentChosenSignal = false;
 	this->rotateYesOrNo = 0;
 	this->backwards = false;
 
 	this->isDusk = false;
 	this->isNight = false;
 
+	this->dayEnd = false;
 }
 
 
@@ -69,6 +71,7 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     		if(showYesOrNo){
     			if(!chosenYes && !chosenNo){
     				chosenYes = true;
+
     			}
     		}
     	}else if(event.key.code == sf::Keyboard::N){
@@ -81,6 +84,7 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
+
 	popText.setString(std::to_string(population));
 	happinessText.setString(std::to_string(happiness));
 	goldText.setString(std::to_string(gold));
@@ -89,11 +93,44 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 	happinessText.setPosition(70, renderWindow.getSize().y-100);
 	goldText.setPosition(70, renderWindow.getSize().y-50);
 
-	if(isDusk){
-		isNight = false;
-	}else if(isNight){
-		isDusk = false;
+
+
+
+	if(!dayEnd){
+		manager.updateManager();
+
+		if(manager.returnNpcNumber() == 2) {isDusk = true; isNight = false;}
+		else if(manager.returnNpcNumber() > 3) {isNight = true; isDusk = false; }
+
+
+		if(manager.returnNpcNumber() == 5){
+			endOfDay();
+		}else{
+			if(manager.returnCurrentNPC()->isDoneTalking() && !manager.returnCurrentNPC()->isMovingIn()){
+
+				if(chosenYes){
+					if(!haveSentChosenSignal){
+						this->haveSentChosenSignal = true;
+						manager.returnCurrentNPC()->dismiss(0);
+					}
+				}else if(chosenNo){
+					if(!haveSentChosenSignal){
+						this->haveSentChosenSignal = true;
+						manager.returnCurrentNPC()->dismiss(1);
+					}
+				}else if(showYesOrNo == false)showYesOrNo = true;
+			}else{
+				//This resets the NPC dialog thing
+				this->haveSentChosenSignal = false;
+				this->showYesOrNo = false;
+				this->chosenYes = false;
+				this->chosenNo = false;
+			}
+		}
+
+
 	}
+
 
 
 }
@@ -142,34 +179,37 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 }
 
 void PlayState::drawNPC(sf::RenderTarget &renderWindow){
+	if(!dayEnd){
+		if(showYesOrNo){
+			sf::Texture yesNoTexture;
+			if(chosenYes){
+				yesNoTexture.loadFromFile("Assets/Gameplay/Yes.png");
+			}else if(chosenNo){
+				yesNoTexture.loadFromFile("Assets/Gameplay/No.png");
+			}else{
+				yesNoTexture.loadFromFile("Assets/Gameplay/YesOrNo.png");
+			}
+			yesOrNo.setTexture(yesNoTexture);
 
-	if(showYesOrNo){
-		sf::Texture yesNoTexture;
-		if(chosenYes){
-			yesNoTexture.loadFromFile("Assets/Gameplay/Yes.png");
-		}else if(chosenNo){
-			yesNoTexture.loadFromFile("Assets/Gameplay/No.png");
-		}else{
-			yesNoTexture.loadFromFile("Assets/Gameplay/YesOrNo.png");
+			yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
+
+			yesOrNo.setRotation(rotateYesOrNo);
+
+			if(backwards){
+				rotateYesOrNo -= 1;
+			}else{
+				rotateYesOrNo += 1;
+			}
+
+			if(rotateYesOrNo > 5 || rotateYesOrNo < -5){
+
+				backwards = !backwards;
+			}
+
+			renderWindow.draw(yesOrNo);
 		}
-		yesOrNo.setTexture(yesNoTexture);
 
-		yesOrNo.setPosition(King.getLocalBounds().width-50, King.getPosition().y+100);
-
-		yesOrNo.setRotation(rotateYesOrNo);
-
-		if(backwards){
-			rotateYesOrNo -= 1;
-		}else{
-			rotateYesOrNo += 1;
-		}
-
-		if(rotateYesOrNo > 5 || rotateYesOrNo < -5){
-
-			backwards = !backwards;
-		}
-
-		renderWindow.draw(yesOrNo);
+		renderWindow.draw(*manager.returnCurrentNPC());
 	}
 }
 
@@ -307,10 +347,18 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 
 
 void PlayState::startOfDay(){
-
+	dayEnd = false;
+	manager.newDay();
 }
 
 void PlayState::endOfDay(){
+	dayEnd = true;
+	showYesOrNo = false;
+	chosenYes = false;
+	chosenNo = false;
+	isDusk = false;
+	isNight = false;
+
 	//POPULATION ADD
 	this->minHappiness = 80 + (population/5);
 
@@ -318,7 +366,9 @@ void PlayState::endOfDay(){
 	if(happinessAdd > 50) happinessAdd = 50;
 	else if(happinessAdd < -50) happinessAdd = -50;
 
-	population += minHappiness;
+	population += happinessAdd;
 	///////////////////////////
+
+	startOfDay();
 
 }
