@@ -24,6 +24,8 @@ private:
 
     //Rendering
     void drawGUI(sf::RenderTarget &renderWindow);
+    void drawBackground(sf::RenderTarget &renderWindow);
+    void drawNPC(sf::RenderTarget &renderWindow);
 
     bool changeWindowSize;
 

@@ -61,6 +61,29 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
 
+	//Draw background stuff
+	drawBackground(renderWindow);
+
+	//Draw NPCs
+	drawNPC(renderWindow);
+
+    //Render GUI
+	drawGUI(renderWindow);
+}
+
+void PlayState::drawNPC(sf::RenderTarget &renderWindow){
+
+}
+
+void PlayState::drawBackground(sf::RenderTarget &renderWindow){
+
+	sf::Texture skyBackground;
+	skyBackground.loadFromFile("Assets/Gameplay/Sky.png");
+	sf::Sprite skyback(skyBackground);
+	skyback.setScale(2.0,2.0);
+	renderWindow.draw(skyback);
+
+
 
 	sf::Texture background1Texture;
 	background1Texture.loadFromFile("Assets/Gameplay/BackgroundHills.png");
@@ -79,9 +102,6 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 	kingSprite.setPosition(0, renderWindow.getSize().y - kingSprite.getLocalBounds().height);
 
 	renderWindow.draw(kingSprite);
-
-    //Render GUI
-	drawGUI(renderWindow);
 }
 
 void PlayState::drawGUI(sf::RenderTarget &renderWindow){
