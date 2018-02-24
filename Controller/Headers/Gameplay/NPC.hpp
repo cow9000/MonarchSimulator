@@ -57,7 +57,7 @@ private:
 	bool doneDrawingDialog;
 	sf::Font defaultFont;
 	std::string dialogString;
-	sf::Text nameText;
+
 	sf::Text dialogText;
 };
 
