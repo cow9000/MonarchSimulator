@@ -37,7 +37,6 @@ NPC::NPC(std::string name) {
 	this->dialogTextShown = 0;
 
 	defaultFont.loadFromFile("Assets/Fonts/GameFont.ttf");
-
 }
 
 
@@ -108,12 +107,10 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
 	//DRAW DIALOG
 	if(drawDialog){
-
 		sf::Text nameText;
 		nameText.setCharacterSize(32);
 		nameText.setFont(defaultFont);
-		nameText.setString(name);
-
+		nameText.setString(this->name);
 
 		target.draw(nameText);
 		target.draw(dialogText);
