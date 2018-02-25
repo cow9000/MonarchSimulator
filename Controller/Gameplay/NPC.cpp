@@ -14,9 +14,8 @@ NPC::NPC(std::string name) {
 	this->position.x = 0;
 	this->position.y = 0;
 	this->rotate = 0;
-
 	this->reverseRotate = true;
-
+	this->moveText = 0;
 	this->movingIn = true;
 
 	this->dismissed = false;
@@ -36,7 +35,12 @@ NPC::NPC(std::string name) {
 	this->doneDrawingDialog = false;
 	this->dialogTextShown = 0;
 
+	this->dialogTextTimeLimiterDefault = 2;
+	this->dialogTextTimeLimiter = this->dialogTextTimeLimiterDefault;
+	this->dialogTextTimeLimiterTemp = 0;
+
 	defaultFont.loadFromFile("Assets/Fonts/GameFont.ttf");
+
 }
 
 
@@ -48,7 +52,19 @@ void NPC::gatherData(){
 
 }
 
-void NPC::update(){
+void NPC::update(sf::RenderTarget &renderWindow){
+
+
+	nameText.setCharacterSize(32);
+	nameText.setFont(defaultFont);
+	nameText.setString(this->name);
+
+	nameText.setPosition(renderWindow.getSize().x - 300,30);
+
+	dialogText.setFont(defaultFont);
+	dialogText.setCharacterSize(20);
+	dialogText.setPosition(renderWindow.getSize().x - 300,60);
+
 	std::cout << "UPDATE" << std::endl;
 	if(rotate > 5 || rotate < -5){
 		reverseRotate = !reverseRotate;
@@ -65,8 +81,10 @@ void NPC::update(){
 
 
 	}else{
-		showDialog();
-		movingIn = false;
+		if(movingIn){
+			showDialog();
+			movingIn = false;
+		}
 	}
 
 	if(dismissed == true  && doneTalking){
@@ -80,13 +98,52 @@ void NPC::update(){
 	}
 	//Set text
 	if(drawDialog){
-		std::cout << "DRAW" << std::endl;
-		if(dialogTextShown >= dialogString.length()-1){
-			doneDrawingDialog = true;
-		}else{
-			dialogTextShown++;
+		if(dialogTextTimeLimiterTemp >= dialogTextTimeLimiter){
+			if(dialogString.at(dialogTextShown) == '.' || dialogString.at(dialogTextShown) == '!' || dialogString.at(dialogTextShown) == '?'){
+				dialogTextTimeLimiter = 12;
+			}else{
+				dialogTextTimeLimiter = dialogTextTimeLimiterDefault;
+			}
 
-			dialogText.setString(dialogString.substr(0,dialogTextShown));
+			if(dialogTextTimeLimiterTemp >= dialogTextTimeLimiter){
+				if(!doneTalking){
+					talkBuffer.loadFromFile("Assets/Gameplay/Soundfiles/blip.ogg");
+					talk.setBuffer(talkBuffer);
+					float random = (float) (std::rand()%1 + 2);
+					talk.setPitch(random);
+					talk.play();
+				}
+
+				std::cout << "DRAW" << std::endl;
+				if(dialogTextShown >= dialogString.length()-1){
+					doneDrawingDialog = true;
+				}else{
+					dialogTextShown++;
+
+					dialogText.setString(dialogString.substr(0,dialogTextShown+2));
+					if(dialogText.getGlobalBounds().left + dialogText.getGlobalBounds().width > renderWindow.getSize().x){
+						if(moveText == 0){
+							moveText = dialogTextShown-5;
+						}
+						std::string tempString = dialogString;
+						for(int i = 0; i < dialogTextShown%moveText; i++){
+							if(i!=0 && i <= dialogTextShown/moveText){
+								tempString.insert(i*moveText,"\n");
+							}
+						}
+
+						dialogText.setString(tempString.substr(0,dialogTextShown+2));
+					}
+				}
+
+				dialogTextTimeLimiterTemp = 0;
+			}else{
+				dialogTextTimeLimiterTemp ++;
+			}
+
+		}else{
+
+			dialogTextTimeLimiterTemp ++;
 		}
 
 	}
@@ -107,10 +164,7 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 
 	//DRAW DIALOG
 	if(drawDialog){
-		sf::Text nameText;
-		nameText.setCharacterSize(32);
-		nameText.setFont(defaultFont);
-		nameText.setString(this->name);
+
 
 		target.draw(nameText);
 		target.draw(dialogText);
@@ -127,17 +181,19 @@ void NPC::showDialog(){
 }
 
 std::string NPC::returnDialog(){
-	std::string text = "My name is jimmy";
+	std::string text = "My name is jimmy... How are you doing?";
 
 	return text;
 }
 
 std::string NPC::returnDialog(int response){
-	std::string text = "My name is jimmy";
+	std::string text = "Okay...jdioghwerioahbioarhgrahgaweioghaweiohfioweafohewoafihweaiofhweiaohfiohaweifheowihfioawehfioawehifohaweiofhweioahf";
 	//0 response means yes,
 	//1 response means no
 	doneDrawingDialog = false;
 	doneTalking = false;
+	this->drawDialog = true;
+	dialogTextShown = 0;
 
 	return text;
 

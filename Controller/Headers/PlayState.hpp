@@ -9,6 +9,8 @@
 #ifndef PlayState_hpp
 #define PlayState_hpp
 
+
+#include <SFML/Audio.hpp>
 #include "State.hpp"
 #include "Gameplay/NPCManager.hpp"
 
@@ -69,6 +71,18 @@ private:
     sf::Sprite cloud6;
 
     sf::Sprite King;
+    //Yes or no = Soundbuffer1
+    sf::SoundBuffer soundBuffer1;
+    sf::Sound sound1;
+
+
+    sf::SoundBuffer soundBuffer2;
+    sf::Sound sound2;
+
+    sf::SoundBuffer soundBuffer3;
+    sf::Sound sound3;
+
+
 
 };
 

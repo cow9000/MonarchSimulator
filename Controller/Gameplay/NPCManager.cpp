@@ -45,8 +45,8 @@ void NPCManager::newDay(){
 	}
 }
 
-void NPCManager::updateManager(){
-	returnCurrentNPC()->update();
+void NPCManager::updateManager(sf::RenderTarget &renderWindow){
+	returnCurrentNPC()->update(renderWindow);
 
 	if(!NPCStack.empty()){
 		if(NPCStack.top().canMoveOn()){

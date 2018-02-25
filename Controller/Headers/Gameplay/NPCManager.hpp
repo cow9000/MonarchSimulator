@@ -19,7 +19,7 @@ public:
 	NPC *returnCurrentNPC();
 
 	int returnNpcNumber();
-	void updateManager();
+	void updateManager(sf::RenderTarget &renderWindow);
 
 	void newDay();
 

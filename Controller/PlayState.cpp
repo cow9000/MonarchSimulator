@@ -97,7 +97,7 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 
 
 	if(!dayEnd){
-		manager.updateManager();
+		manager.updateManager(renderWindow);
 
 		if(manager.returnNpcNumber() == 2) {isDusk = true; isNight = false;}
 		else if(manager.returnNpcNumber() > 3) {isNight = true; isDusk = false; }
@@ -107,24 +107,35 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 			endOfDay();
 		}else{
 			if(manager.returnCurrentNPC()->isDoneTalking() && !manager.returnCurrentNPC()->isMovingIn()){
-
+				int randomNumber = std::rand() %3 + 1;
 				if(chosenYes){
 					if(!haveSentChosenSignal){
+						soundBuffer1.loadFromFile("Assets/Gameplay/Soundfiles/yes" + std::to_string(randomNumber) + ".ogg");
+						sound1.setBuffer(soundBuffer1);
+						sound1.play();
 						this->haveSentChosenSignal = true;
 						manager.returnCurrentNPC()->dismiss(0);
 					}
 				}else if(chosenNo){
 					if(!haveSentChosenSignal){
+						soundBuffer1.loadFromFile("Assets/Gameplay/Soundfiles/no" + std::to_string(randomNumber) + ".ogg");
+						sound1.setBuffer(soundBuffer1);
+						sound1.play();
+
+
 						this->haveSentChosenSignal = true;
+
 						manager.returnCurrentNPC()->dismiss(1);
 					}
-				}else if(showYesOrNo == false)showYesOrNo = true;
+				}else if(showYesOrNo == false && chosenYes==false && chosenNo == false)showYesOrNo = true;
 			}else{
-				//This resets the NPC dialog thing
-				this->haveSentChosenSignal = false;
-				this->showYesOrNo = false;
-				this->chosenYes = false;
-				this->chosenNo = false;
+				if(!manager.returnCurrentNPC()->isDismissed()){
+					//This resets the NPC dialog thing
+					this->haveSentChosenSignal = false;
+					this->showYesOrNo = false;
+					this->chosenYes = false;
+					this->chosenNo = false;
+				}
 			}
 		}
 
