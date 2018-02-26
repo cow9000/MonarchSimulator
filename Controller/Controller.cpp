@@ -15,6 +15,7 @@ Controller::Controller(){
 	gameMusic.setBuffer(buffer);
 
 	gameMusic.play();
+
 	gameMusic.setLoop(true);
 	//gameMusic.openFromFile("Assets/music.ogg");
 	//gameMusic.play();

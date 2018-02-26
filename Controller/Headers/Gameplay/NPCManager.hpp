@@ -26,6 +26,7 @@ public:
 private:
 	void addRandomNPC();
 	void nextNPC();
+	void generateConfigFile();
 
 	int NpcNumber;
 	std::stack<NPC> NPCStack;

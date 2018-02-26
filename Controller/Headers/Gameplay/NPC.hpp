@@ -15,7 +15,7 @@
 
 class NPC : public sf::Drawable{
 public:
-	NPC(std::string name);
+	NPC(int id);
 	virtual ~NPC();
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -32,11 +32,12 @@ public:
 	bool canMoveOn() {return moveOn;}
 private:
 	sf::Clock movementClock;
-	void gatherData();
+	void loadData();
 	void saveData();
 	void showDialog();
 
 	std::string name;
+	int id;
 
 	sf::Texture NPCTexture;
 	sf::Vector2f position;
