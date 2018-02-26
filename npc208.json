@@ -1,0 +1,171 @@
+{
+   "208" : {
+      "dialog" : {
+         "0" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[0] - 208"
+         },
+         "1" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[1] - 208"
+         },
+         "2" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[2] - 208"
+         },
+         "3" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[3] - 208"
+         },
+         "4" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[4] - 208"
+         },
+         "5" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[5] - 208"
+         },
+         "6" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[6] - 208"
+         },
+         "7" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[7] - 208"
+         },
+         "8" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[8] - 208"
+         },
+         "9" : {
+            "NeedResponse" : "1",
+            "text" : "DESC_CHANGE[9] - 208"
+         }
+      },
+      "name" : "NEED TO CHANGE - 208",
+      "no" : {
+         "0" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[0] TO CHANGE - 208"
+         },
+         "1" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[1] TO CHANGE - 208"
+         },
+         "2" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[2] TO CHANGE - 208"
+         },
+         "3" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[3] TO CHANGE - 208"
+         },
+         "4" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[4] TO CHANGE - 208"
+         },
+         "5" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[5] TO CHANGE - 208"
+         },
+         "6" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[6] TO CHANGE - 208"
+         },
+         "7" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[7] TO CHANGE - 208"
+         },
+         "8" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[8] TO CHANGE - 208"
+         },
+         "9" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[9] TO CHANGE - 208"
+         }
+      },
+      "yes" : {
+         "0" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[0] TO CHANGE - 208"
+         },
+         "1" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[1] TO CHANGE - 208"
+         },
+         "2" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[2] TO CHANGE - 208"
+         },
+         "3" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[3] TO CHANGE - 208"
+         },
+         "4" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[4] TO CHANGE - 208"
+         },
+         "5" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[5] TO CHANGE - 208"
+         },
+         "6" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[6] TO CHANGE - 208"
+         },
+         "7" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[7] TO CHANGE - 208"
+         },
+         "8" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[8] TO CHANGE - 208"
+         },
+         "9" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[9] TO CHANGE - 208"
+         }
+      }
+   }
+}

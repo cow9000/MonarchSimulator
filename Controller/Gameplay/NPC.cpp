@@ -22,6 +22,7 @@ NPC::NPC(int id) {
 	this->position.x = 0;
 	this->position.y = 0;
 	this->rotate = 0;
+	this->response = 0;
 	this->reverseRotate = true;
 	this->moveText = 0;
 	this->movingIn = true;
@@ -70,31 +71,23 @@ void NPC::loadData(){
 
 		//NPCID, stillVisit
 		event[std::to_string(id)]["name"] = "NEED TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["dialog"]["0"]["text"] = "DESC TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["dialog"]["0"]["NeedResponse"] = "1";
 
-		event[std::to_string(id)]["dialog"]["1"]["text"] = "DESC TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["dialog"]["1"]["NeedResponse"] = "1";
+		for(int i = 0; i < 10; i++){
 
-		event[std::to_string(id)]["yes"]["0"]["text"] = "YES[0] TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["yes"]["0"]["population"] = "100";
-		event[std::to_string(id)]["yes"]["0"]["happiness"] = "100";
-		event[std::to_string(id)]["yes"]["0"]["gold"] = "100";
+		event[std::to_string(id)]["dialog"][std::to_string(i)]["text"] = "DESC_CHANGE[" + std::to_string(i) + "] - " + std::to_string(id);
+		event[std::to_string(id)]["dialog"][std::to_string(i)]["NeedResponse"] = "1";
 
-		event[std::to_string(id)]["yes"]["1"]["text"] = "YES[1] TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["yes"]["1"]["population"] = "100";
-		event[std::to_string(id)]["yes"]["1"]["happiness"] = "100";
-		event[std::to_string(id)]["yes"]["1"]["gold"] = "100";
+		event[std::to_string(id)]["yes"][std::to_string(i)]["text"] = "YES[" + std::to_string(i) + "] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["yes"][std::to_string(i)]["population"] = "100";
+		event[std::to_string(id)]["yes"][std::to_string(i)]["happiness"] = "100";
+		event[std::to_string(id)]["yes"][std::to_string(i)]["gold"] = "100";
 
-		event[std::to_string(id)]["no"]["0"]["text"] = "NO[0] TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["no"]["0"]["population"] = "-100";
-		event[std::to_string(id)]["no"]["0"]["happiness"] = "-100";
-		event[std::to_string(id)]["no"]["0"]["gold"] = "-100";
+		event[std::to_string(id)]["no"][std::to_string(i)]["text"] = "NO[" + std::to_string(i) + "] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["no"][std::to_string(i)]["population"] = "-100";
+		event[std::to_string(id)]["no"][std::to_string(i)]["happiness"] = "-100";
+		event[std::to_string(id)]["no"][std::to_string(i)]["gold"] = "-100";
 
-		event[std::to_string(id)]["no"]["1"]["text"] = "NO[1] TO CHANGE - " + std::to_string(id);
-		event[std::to_string(id)]["no"]["1"]["population"] = "-100";
-		event[std::to_string(id)]["no"]["1"]["happiness"] = "-100";
-		event[std::to_string(id)]["no"]["1"]["gold"] = "-100";
+		}
 
 
 
@@ -281,26 +274,26 @@ void NPC::dismiss(int response){
 int NPC::returnHappiness(){
 	int happiness = 0;
 	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
-	std::string response = "no";
-	if(this->response == 1) response = "yes";
-	happiness = std::stoi(NPCData[std::to_string(id)][response][timesVisited]["happiness"].asString());
+	std::string responseString = "yes";
+	if(this->response == 1) responseString = "no";
+	happiness = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["happiness"].asString());
 	return happiness;
 }
 
 int NPC::returnPopulation(){
 	int population = 0;
 	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
-	std::string response = "no";
-	if(this->response == 1) response = "yes";
-	population = std::stoi(NPCData[std::to_string(id)][response][timesVisited]["population"].asString());
+	std::string responseString = "yes";
+	if(this->response == 1) responseString = "no";
+	population = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["population"].asString());
 	return population;
 }
 
 int NPC::returnGold(){
 	int gold = 0;
 	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
-	std::string response = "no";
-	if(this->response == 1) response = "yes";
-	gold = std::stoi(NPCData[std::to_string(id)][response][timesVisited]["gold"].asString());
+	std::string responseString = "yes";
+	if(this->response == 1) responseString = "no";
+	gold = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["gold"].asString());
 	return gold;
 }
