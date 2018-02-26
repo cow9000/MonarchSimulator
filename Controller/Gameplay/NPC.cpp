@@ -59,7 +59,7 @@ NPC::~NPC() {
 
 void NPC::loadData(){
 	std::string name = "";
-	std::string fileName = "npc" + std::to_string(id) + ".json";
+	std::string fileName = "data/npc" + std::to_string(id) + ".json";
 	if(!file_exists(fileName)){
 
 		std::ofstream file_id;
@@ -105,6 +105,20 @@ void NPC::loadData(){
 
 
 	this->name = name;
+}
+
+void NPC::saveData(){
+
+	if(GameSaveData[std::to_string(id)]["countVisit"].asString() == "1"){
+		GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 1);
+	}
+
+	Json::StyledStreamWriter writer;
+	std::ofstream outFile;
+
+	outFile.open(GameManager::saveFileName);
+	writer.write(outFile, GameSaveData);
+	outFile.close();
 }
 
 void NPC::update(sf::RenderTarget &renderWindow){
@@ -269,6 +283,7 @@ void NPC::dismiss(int response){
 	this->dismissed = true;
 	this->response = response;
 	dialogString = returnDialog(response);
+	saveData();
 }
 
 int NPC::returnHappiness(){
