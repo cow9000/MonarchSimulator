@@ -115,6 +115,12 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						sound1.play();
 						this->haveSentChosenSignal = true;
 						manager.returnCurrentNPC()->dismiss(0);
+
+						// Add/Remove values
+
+						this->happiness += manager.returnCurrentNPC()->returnHappiness();
+						this->gold += manager.returnCurrentNPC()->returnGold();
+						this->population += manager.returnCurrentNPC()->returnPopulation();
 					}
 				}else if(chosenNo){
 					if(!haveSentChosenSignal){
@@ -126,6 +132,12 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->haveSentChosenSignal = true;
 
 						manager.returnCurrentNPC()->dismiss(1);
+
+						// Add/Remove values
+
+						this->happiness += manager.returnCurrentNPC()->returnHappiness();
+						this->gold += manager.returnCurrentNPC()->returnGold();
+						this->population += manager.returnCurrentNPC()->returnPopulation();
 					}
 				}else if(showYesOrNo == false && chosenYes==false && chosenNo == false)showYesOrNo = true;
 			}else{

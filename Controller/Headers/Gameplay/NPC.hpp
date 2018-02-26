@@ -35,6 +35,10 @@ public:
 	bool isDismissed(){ return dismissed; }
 	bool isMovingIn(){ return movingIn; }
 	bool canMoveOn() {return moveOn;}
+
+	int returnHappiness();
+	int returnPopulation();
+	int returnGold();
 private:
 	sf::Clock movementClock;
 	void loadData();
@@ -57,6 +61,8 @@ private:
 	bool dismissed;
 	bool doneTalking;
 	bool moveOn;
+
+	int response;
 
 
 	int dialogTextShown;

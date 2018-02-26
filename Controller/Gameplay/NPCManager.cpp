@@ -57,7 +57,7 @@ void NPCManager::generateConfigFile(){
 
 
 void NPCManager::addRandomNPC(){
-	NPCStack.push(NPC(2));
+	NPCStack.push(NPC(std::rand()%3));
 }
 
 NPCManager::~NPCManager() {
