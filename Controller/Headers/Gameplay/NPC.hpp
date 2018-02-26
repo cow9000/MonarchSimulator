@@ -12,6 +12,11 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fstream>
+#include "../../../Json/json/json.h"
+
 
 class NPC : public sf::Drawable{
 public:
@@ -69,6 +74,9 @@ private:
 
 	sf::SoundBuffer talkBuffer;
 	sf::Sound talk;
+
+	Json::Value NPCData;
+	Json::Value GameSaveData;
 
 };
 

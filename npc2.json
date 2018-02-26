@@ -1,0 +1,43 @@
+{
+   "2" : {
+      "dialog" : {
+         "0" : {
+            "NeedResponse" : "1",
+            "text" : "We require additional pylons. May we have the resources to build them?"
+         },
+         "1" : {
+            "NeedResponse" : "1",
+            "text" : "DESC TO CHANGE - 2"
+         }
+      },
+      "name" : "Zealot",
+      "no" : {
+         "0" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "Not enough minerals I see..."
+         },
+         "1" : {
+            "gold" : "-100",
+            "happiness" : "-100",
+            "population" : "-100",
+            "text" : "NO[1] TO CHANGE - 2"
+         }
+      },
+      "yes" : {
+         "0" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "We shall produce. Thank you"
+         },
+         "1" : {
+            "gold" : "100",
+            "happiness" : "100",
+            "population" : "100",
+            "text" : "YES[1] TO CHANGE - 2"
+         }
+      }
+   }
+}

@@ -1,26 +1,21 @@
-//
-//  GameManager.hpp
-//  EvoSim
-//
-//  Created by Vawdrey, Derek on 1/26/18.
-//  Copyright © 2018 Vawdrey, Derek. All rights reserved.
-//
+/*
+ * GameManager.hpp
+ *
+ *  Created on: Feb 26, 2018
+ *      Author: Derek
+ */
 
-#ifndef GameManager_hpp
-#define GameManager_hpp
+#ifndef CONTROLLER_GAMEPLAY_GAMEMANAGER_HPP_
+#define CONTROLLER_GAMEPLAY_GAMEMANAGER_HPP_
 
-#include <SFML/Graphics.hpp>
+#include <string>
 
 namespace GameManager{
-
+	const std::string saveFileName = "SaveFile.json";
     //Colors
     const sf::Color buttonSelectedColor(0,224,127);
     const sf::Color buttonUnSelectedColor(255,255,255);
-    
-    
-
 };
 
 
-
-#endif /* GameManager_hpp */
+#endif /* CONTROLLER_GAMEPLAY_GAMEMANAGER_HPP_ */

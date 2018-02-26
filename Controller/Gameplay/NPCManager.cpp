@@ -6,6 +6,7 @@
  */
 
 #include "../Headers/Gameplay/NPCManager.hpp"
+#include "../Headers/Gameplay/GameManager.hpp"
 #include "../../Json/json/json.h"
 #include <iostream>
 #include <fstream>
@@ -27,20 +28,24 @@ NPCManager::NPCManager() {
 
 void NPCManager::generateConfigFile(){
 	std::ofstream file_id;
-	std::string fileName = "SaveFile.json";
-	file_id.open(fileName);
+
+	std::string fileName = GameManager::saveFileName;
 
 	if(!file_exists(fileName)){
+		file_id.open(fileName);
+
 
 		Json::Value event;
 
 		//0 false, 1 true
 
 		//NPCID, stillVisit
-		event["0"]["StillVisit"] = "1";
-		event["0"]["TimesVisited"] = "0";
-		event["0"]["CountVisit"] = "0";
-		event["0"]["RandomizedDialog"] = "0";
+		for(int i = 0; i < 2000; i++){
+			event[std::to_string(i)]["stillVisit"] = "1";
+			event[std::to_string(i)]["timesVisited"] = "0";
+			event[std::to_string(i)]["countVisit"] = "0";
+			event[std::to_string(i)]["randomizedDialog"] = "0";
+		}
 
 		Json::StyledWriter styledWriter;
 		file_id << styledWriter.write(event);

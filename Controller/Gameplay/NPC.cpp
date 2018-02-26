@@ -6,6 +6,14 @@
  */
 
 #include "../Headers/Gameplay/NPC.hpp"
+#include "../Headers/Gameplay/GameManager.hpp"
+
+inline bool file_exists (const std::string& name) {
+  struct stat buffer;
+  return (stat (name.c_str(), &buffer) == 0);
+}
+
+
 
 NPC::NPC(int id) {
 	// TODO Auto-generated constructor stub
@@ -50,6 +58,58 @@ NPC::~NPC() {
 
 void NPC::loadData(){
 	std::string name = "";
+	std::string fileName = "npc" + std::to_string(id) + ".json";
+	if(!file_exists(fileName)){
+
+		std::ofstream file_id;
+		file_id.open(fileName);
+
+		Json::Value event;
+
+		//0 false, 1 true
+
+		//NPCID, stillVisit
+		event[std::to_string(id)]["name"] = "NEED TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["dialog"]["0"]["text"] = "DESC TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["dialog"]["0"]["NeedResponse"] = "1";
+
+		event[std::to_string(id)]["dialog"]["1"]["text"] = "DESC TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["dialog"]["1"]["NeedResponse"] = "1";
+
+		event[std::to_string(id)]["yes"]["0"]["text"] = "YES[0] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["yes"]["0"]["population"] = "100";
+		event[std::to_string(id)]["yes"]["0"]["happiness"] = "100";
+		event[std::to_string(id)]["yes"]["0"]["gold"] = "100";
+
+		event[std::to_string(id)]["yes"]["1"]["text"] = "YES[1] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["yes"]["1"]["population"] = "100";
+		event[std::to_string(id)]["yes"]["1"]["happiness"] = "100";
+		event[std::to_string(id)]["yes"]["1"]["gold"] = "100";
+
+		event[std::to_string(id)]["no"]["0"]["text"] = "NO[0] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["no"]["0"]["population"] = "-100";
+		event[std::to_string(id)]["no"]["0"]["happiness"] = "-100";
+		event[std::to_string(id)]["no"]["0"]["gold"] = "-100";
+
+		event[std::to_string(id)]["no"]["1"]["text"] = "NO[1] TO CHANGE - " + std::to_string(id);
+		event[std::to_string(id)]["no"]["1"]["population"] = "-100";
+		event[std::to_string(id)]["no"]["1"]["happiness"] = "-100";
+		event[std::to_string(id)]["no"]["1"]["gold"] = "-100";
+
+
+
+		Json::StyledWriter styledWriter;
+		file_id << styledWriter.write(event);
+		file_id.close();
+	}
+
+	std::ifstream file(fileName);
+	file >> NPCData;
+	name = NPCData[std::to_string(id)]["name"].asString();
+
+	std::ifstream file2(GameManager::saveFileName);
+	file2 >> GameSaveData;
+
 
 	this->name = name;
 }
@@ -185,7 +245,8 @@ void NPC::showDialog(){
 }
 
 std::string NPC::returnDialog(){
-	std::string text = "We require additonal power pylons, may we build them?";
+	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string text = NPCData[std::to_string(id)]["dialog"][timesVisited]["text"].asString();
 
 	return text;
 }
@@ -199,10 +260,12 @@ std::string NPC::returnDialog(int response){
 	this->drawDialog = true;
 	dialogTextShown = 0;
 
+	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+
 	if(response == 1){
-		text = "Not enough minerals I see...";
+		text = NPCData[std::to_string(id)]["no"][timesVisited]["text"].asString();
 	}else{
-		text = "... Cool";
+		text = NPCData[std::to_string(id)]["yes"]["0"]["text"].asString();
 	}
 
 	return text;
