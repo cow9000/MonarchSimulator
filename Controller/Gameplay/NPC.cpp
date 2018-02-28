@@ -110,16 +110,13 @@ void NPC::loadData(){
 void NPC::saveData(){
 	std::cout << "COUNT VISIT - " << GameSaveData[std::to_string(id)]["countVisit"].asString() << std::endl;
 	if(GameSaveData[std::to_string(id)]["countVisit"].asString() == "1"){
-		GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 5);
-		std::cout << GameSaveData[std::to_string(id)]["timesVisited"] << std::endl;
+		if(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) < 9){
+			GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 1);
+			std::cout << GameSaveData[std::to_string(id)]["timesVisited"] << std::endl;
+		}else{
+			GameSaveData[std::to_string(id)]["timesVisited"] = "0";
+		}
 	}
-
-	Json::StyledStreamWriter writer;
-	std::fstream outFile;
-
-	outFile.open(GameManager::saveFileName);
-	writer.write(outFile, GameSaveData);
-	outFile.close();
 }
 
 void NPC::update(sf::RenderTarget &renderWindow){

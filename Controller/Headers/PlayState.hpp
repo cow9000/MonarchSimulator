@@ -24,6 +24,7 @@ public:
     void processState(sf::Event &event, sf::RenderTarget &renderWindow);
     void updateState(sf::RenderTarget &renderWindow);
     void renderState(sf::RenderTarget &renderWindow);
+    Json::Value& returnGameSaveData();
 private:
     void startOfDay();
     void endOfDay();

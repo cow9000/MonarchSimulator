@@ -62,6 +62,10 @@ PlayState::~PlayState(){
     
 }
 
+Json::Value& PlayState::returnGameSaveData(){
+	return GameSaveData;
+}
+
 void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     if(event.type == sf::Event::MouseButtonPressed){
         
@@ -142,6 +146,9 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->population += manager.returnCurrentNPC()->returnPopulation();
 					}
 				}else if(showYesOrNo == false && chosenYes==false && chosenNo == false)showYesOrNo = true;
+
+
+
 			}else{
 				if(!manager.returnCurrentNPC()->isDismissed()){
 					//This resets the NPC dialog thing
@@ -155,8 +162,6 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 
 
 	}
-
-
 
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
@@ -380,6 +385,7 @@ void PlayState::startOfDay(){
 }
 
 void PlayState::endOfDay(){
+
 	dayEnd = true;
 	showYesOrNo = false;
 	chosenYes = false;
@@ -398,5 +404,16 @@ void PlayState::endOfDay(){
 	///////////////////////////
 
 	startOfDay();
+
+	GameSaveData["gold"] = std::to_string(gold);
+	GameSaveData["population"] = std::to_string(population);
+	GameSaveData["happiness"] = std::to_string(happiness);
+
+	Json::StyledWriter writer;
+	std::ofstream outFile;
+
+	outFile.open(GameManager::saveFileName);
+	outFile << writer.write(GameSaveData);
+	outFile.close();
 
 }
