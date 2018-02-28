@@ -10,6 +10,8 @@
 
 PlayState::PlayState(StateManager* stateManager){
 
+	manager = new NPCManager(&GameSaveData);
+
 	cloud1.setPosition(rand()%1500,rand()%1500);
 	cloud2.setPosition(rand()%1500,rand()%1500);
 	cloud3.setPosition(rand()%1500,rand()%1500);
@@ -59,7 +61,7 @@ PlayState::PlayState(StateManager* stateManager){
 
 
 PlayState::~PlayState(){
-    
+	delete manager;
 }
 
 Json::Value& PlayState::returnGameSaveData(){
@@ -103,16 +105,16 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 
 
 	if(!dayEnd){
-		manager.updateManager(renderWindow);
+		manager->updateManager(renderWindow);
 
-		if(manager.returnNpcNumber() == 2) {isDusk = true; isNight = false;}
-		else if(manager.returnNpcNumber() > 3) {isNight = true; isDusk = false; }
+		if(manager->returnNpcNumber() == 2) {isDusk = true; isNight = false;}
+		else if(manager->returnNpcNumber() > 3) {isNight = true; isDusk = false; }
 
 
-		if(manager.returnNpcNumber() == 5){
+		if(manager->returnNpcNumber() == 5){
 			endOfDay();
 		}else{
-			if(manager.returnCurrentNPC()->isDoneTalking() && !manager.returnCurrentNPC()->isMovingIn()){
+			if(manager->returnCurrentNPC()->isDoneTalking() && !manager->returnCurrentNPC()->isMovingIn()){
 				int randomNumber = std::rand() %3 + 1;
 				if(chosenYes){
 					if(!haveSentChosenSignal){
@@ -120,13 +122,13 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						sound1.setBuffer(soundBuffer1);
 						sound1.play();
 						this->haveSentChosenSignal = true;
-						manager.returnCurrentNPC()->dismiss(0);
+						manager->returnCurrentNPC()->dismiss(0);
 
 						// Add/Remove values
 
-						this->happiness += manager.returnCurrentNPC()->returnHappiness();
-						this->gold += manager.returnCurrentNPC()->returnGold();
-						this->population += manager.returnCurrentNPC()->returnPopulation();
+						this->happiness += manager->returnCurrentNPC()->returnHappiness();
+						this->gold += manager->returnCurrentNPC()->returnGold();
+						this->population += manager->returnCurrentNPC()->returnPopulation();
 					}
 				}else if(chosenNo){
 					if(!haveSentChosenSignal){
@@ -137,20 +139,20 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 
 						this->haveSentChosenSignal = true;
 
-						manager.returnCurrentNPC()->dismiss(1);
+						manager->returnCurrentNPC()->dismiss(1);
 
 						// Add/Remove values
 
-						this->happiness += manager.returnCurrentNPC()->returnHappiness();
-						this->gold += manager.returnCurrentNPC()->returnGold();
-						this->population += manager.returnCurrentNPC()->returnPopulation();
+						this->happiness += manager->returnCurrentNPC()->returnHappiness();
+						this->gold += manager->returnCurrentNPC()->returnGold();
+						this->population += manager->returnCurrentNPC()->returnPopulation();
 					}
 				}else if(showYesOrNo == false && chosenYes==false && chosenNo == false)showYesOrNo = true;
 
 
 
 			}else{
-				if(!manager.returnCurrentNPC()->isDismissed()){
+				if(!manager->returnCurrentNPC()->isDismissed()){
 					//This resets the NPC dialog thing
 					this->haveSentChosenSignal = false;
 					this->showYesOrNo = false;
@@ -212,7 +214,7 @@ void PlayState::renderState(sf::RenderTarget &renderWindow){
 void PlayState::drawNPC(sf::RenderTarget &renderWindow){
 	if(!dayEnd){
 
-		renderWindow.draw(*manager.returnCurrentNPC());
+		renderWindow.draw(*manager->returnCurrentNPC());
 	}
 }
 
@@ -314,6 +316,11 @@ void PlayState::drawBackground(sf::RenderTarget &renderWindow){
 void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 
 
+	if(manager->returnCurrentNPC()->getDrawDialog()){
+		renderWindow.draw(manager->returnCurrentNPC()->returnNameText());
+		renderWindow.draw(manager->returnCurrentNPC()->returnDialogText());
+	}
+
 	sf::Texture GuiTexture;
 	GuiTexture.loadFromFile("Assets/Gameplay/GuiBackground.png");
 
@@ -381,7 +388,7 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 
 void PlayState::startOfDay(){
 	dayEnd = false;
-	manager.newDay();
+	manager->newDay();
 }
 
 void PlayState::endOfDay(){

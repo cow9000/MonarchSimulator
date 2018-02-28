@@ -15,8 +15,8 @@ inline bool file_exists (const std::string& name) {
 
 
 
-NPC::NPC(int id) {
-	// TODO Auto-generated constructor stub
+NPC::NPC(int id, Json::Value* GameSaveData) {
+	this->GameSaveData = GameSaveData;
 
 	this->id = id;
 	this->position.x = 0;
@@ -100,21 +100,18 @@ void NPC::loadData(){
 	file >> NPCData;
 	name = NPCData[std::to_string(id)]["name"].asString();
 
-	std::ifstream file2(GameManager::saveFileName);
-	file2 >> GameSaveData;
-
 
 	this->name = name;
 }
 
 void NPC::saveData(){
-	std::cout << "COUNT VISIT - " << GameSaveData[std::to_string(id)]["countVisit"].asString() << std::endl;
-	if(GameSaveData[std::to_string(id)]["countVisit"].asString() == "1"){
-		if(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) < 9){
-			GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 1);
-			std::cout << GameSaveData[std::to_string(id)]["timesVisited"] << std::endl;
+	std::cout << "COUNT VISIT - " << (*GameSaveData)[std::to_string(id)]["countVisit"].asString() << std::endl;
+	if((*GameSaveData)[std::to_string(id)]["countVisit"].asString() == "1"){
+		if(std::stoi((*GameSaveData)[std::to_string(id)]["timesVisited"].asString()) < 9){
+			(*GameSaveData)[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi((*GameSaveData)[std::to_string(id)]["timesVisited"].asString()) + 1);
+			std::cout << (*GameSaveData)[std::to_string(id)]["timesVisited"] << std::endl;
 		}else{
-			GameSaveData[std::to_string(id)]["timesVisited"] = "0";
+			(*GameSaveData)[std::to_string(id)]["timesVisited"] = "0";
 		}
 	}
 }
@@ -227,13 +224,6 @@ void NPC::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 	else NPCSprite.setPosition(target.getSize().x - position.x, (target.getSize().y - NPCSprite.getLocalBounds().height));
 	target.draw(NPCSprite);
 
-	//DRAW DIALOG
-	if(drawDialog){
-
-
-		target.draw(nameText);
-		target.draw(dialogText);
-	}
 
 
 
@@ -246,7 +236,7 @@ void NPC::showDialog(){
 }
 
 std::string NPC::returnDialog(){
-	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string timesVisited = (*GameSaveData)[std::to_string(id)]["timesVisited"].asString();
 	std::string text = NPCData[std::to_string(id)]["dialog"][timesVisited]["text"].asString();
 
 	return text;
@@ -261,7 +251,7 @@ std::string NPC::returnDialog(int response){
 	this->drawDialog = true;
 	dialogTextShown = 0;
 
-	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string timesVisited = (*GameSaveData)[std::to_string(id)]["timesVisited"].asString();
 
 	if(response == 1){
 		text = NPCData[std::to_string(id)]["no"][timesVisited]["text"].asString();
@@ -282,7 +272,7 @@ void NPC::dismiss(int response){
 
 int NPC::returnHappiness(){
 	int happiness = 0;
-	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string timesVisited = (*GameSaveData)[std::to_string(id)]["timesVisited"].asString();
 	std::string responseString = "yes";
 	if(this->response == 1) responseString = "no";
 	happiness = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["happiness"].asString());
@@ -291,7 +281,7 @@ int NPC::returnHappiness(){
 
 int NPC::returnPopulation(){
 	int population = 0;
-	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string timesVisited = (*GameSaveData)[std::to_string(id)]["timesVisited"].asString();
 	std::string responseString = "yes";
 	if(this->response == 1) responseString = "no";
 	population = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["population"].asString());
@@ -300,7 +290,7 @@ int NPC::returnPopulation(){
 
 int NPC::returnGold(){
 	int gold = 0;
-	std::string timesVisited = GameSaveData[std::to_string(id)]["timesVisited"].asString();
+	std::string timesVisited = (*GameSaveData)[std::to_string(id)]["timesVisited"].asString();
 	std::string responseString = "yes";
 	if(this->response == 1) responseString = "no";
 	gold = std::stoi(NPCData[std::to_string(id)][responseString][timesVisited]["gold"].asString());

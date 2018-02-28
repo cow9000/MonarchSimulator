@@ -1,6 +1,6 @@
 {
    "0" : {
-      "countVisit" : "1",
+      "countVisit" : "0",
       "randomizedDialog" : "0",
       "stillVisit" : "1",
       "timesVisited" : "0"
@@ -11999,7 +11999,7 @@
       "stillVisit" : "1",
       "timesVisited" : "0"
    },
-   "gold" : "200",
-   "happiness" : "100",
-   "population" : "100"
+   "gold" : "700",
+   "happiness" : "705",
+   "population" : "900"
 }

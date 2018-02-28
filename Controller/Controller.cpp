@@ -13,10 +13,11 @@ Controller::Controller(){
 	window.create(sf::VideoMode(640,480), "Kingdom Simulator");
 	buffer.loadFromFile("Assets/music.ogg");
 	gameMusic.setBuffer(buffer);
-
+	gameMusic.setVolume(25);
 	gameMusic.play();
 
 	gameMusic.setLoop(true);
+	gameMusic.setVolume(25);
 	//gameMusic.openFromFile("Assets/music.ogg");
 	//gameMusic.play();
 

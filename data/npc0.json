@@ -3,7 +3,7 @@
       "dialog" : {
          "0" : {
             "NeedResponse" : "1",
-            "text" : "DESC_CHANGE[0] - 0"
+            "text" : "GIVE MEH YOUR BRAINS..."
          },
          "1" : {
             "NeedResponse" : "1",
@@ -42,13 +42,13 @@
             "text" : "DESC_CHANGE[9] - 0"
          }
       },
-      "name" : "NEED TO CHANGE - 0",
+      "name" : "Sir Flamiohotman",
       "no" : {
          "0" : {
             "gold" : "-100",
             "happiness" : "-100",
             "population" : "-100",
-            "text" : "NO[0] TO CHANGE - 0"
+            "text" : "GO DIE IN A HOLE"
          },
          "1" : {
             "gold" : "-100",
@@ -110,7 +110,7 @@
             "gold" : "100",
             "happiness" : "100",
             "population" : "100",
-            "text" : "YES[0] TO CHANGE - 0"
+            "text" : "OKAY..."
          },
          "1" : {
             "gold" : "100",

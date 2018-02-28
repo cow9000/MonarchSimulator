@@ -20,7 +20,7 @@
 
 class NPC : public sf::Drawable{
 public:
-	NPC(int id);
+	NPC(int id, Json::Value* GameSaveData);
 	virtual ~NPC();
 
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -34,11 +34,15 @@ public:
 	bool isDoneTalking(){ return doneTalking; }
 	bool isDismissed(){ return dismissed; }
 	bool isMovingIn(){ return movingIn; }
+	bool getDrawDialog() {return drawDialog; }
 	bool canMoveOn() {return moveOn;}
 
 	int returnHappiness();
 	int returnPopulation();
 	int returnGold();
+
+	sf::Text returnNameText(){ return nameText; }
+	sf::Text returnDialogText(){ return dialogText; }
 private:
 	sf::Clock movementClock;
 	void loadData();
@@ -82,7 +86,7 @@ private:
 	sf::Sound talk;
 
 	Json::Value NPCData;
-	Json::Value GameSaveData;
+	Json::Value* GameSaveData;
 
 };
 

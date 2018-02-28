@@ -56,7 +56,7 @@ private:
     int happiness;
     int gold;
 
-    NPCManager manager;
+    NPCManager* manager;
 
     int minHappiness;
 

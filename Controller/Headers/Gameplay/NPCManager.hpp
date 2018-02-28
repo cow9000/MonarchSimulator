@@ -13,7 +13,7 @@
 
 class NPCManager {
 public:
-	NPCManager();
+	NPCManager(Json::Value* GameSaveData);
 	virtual ~NPCManager();
 
 	NPC *returnCurrentNPC();
@@ -30,6 +30,7 @@ private:
 
 	int NpcNumber;
 	std::stack<NPC> NPCStack;
+	Json::Value* GameSaveData;
 };
 
 #endif /* CONTROLLER_GAMEPLAY_NPCMANAGER_HPP_ */

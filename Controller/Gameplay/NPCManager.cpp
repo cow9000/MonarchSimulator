@@ -18,8 +18,9 @@ inline bool file_exists (const std::string& name) {
   return (stat (name.c_str(), &buffer) == 0);
 }
 
-NPCManager::NPCManager() {
+NPCManager::NPCManager(Json::Value* GameSaveData) {
 	// TODO Auto-generated constructor stub
+	this->GameSaveData = GameSaveData;
 	this->NpcNumber = 0;
 	generateConfigFile();
 	newDay();
@@ -60,7 +61,7 @@ void NPCManager::generateConfigFile(){
 
 
 void NPCManager::addRandomNPC(){
-	NPCStack.push(NPC(std::rand()%3));
+	NPCStack.push(NPC(std::rand()%3,GameSaveData));
 }
 
 NPCManager::~NPCManager() {

@@ -3,7 +3,7 @@
       "dialog" : {
          "0" : {
             "NeedResponse" : "1",
-            "text" : "DESC_CHANGE[0] - 1"
+            "text" : "We require additional pylons sire, would you be so kind as to provide us with resources?"
          },
          "1" : {
             "NeedResponse" : "1",
@@ -42,13 +42,13 @@
             "text" : "DESC_CHANGE[9] - 1"
          }
       },
-      "name" : "NEED TO CHANGE - 1",
+      "name" : "Zealot",
       "no" : {
          "0" : {
-            "gold" : "-100",
-            "happiness" : "-100",
-            "population" : "-100",
-            "text" : "NO[0] TO CHANGE - 1"
+            "gold" : "0",
+            "happiness" : "0",
+            "population" : "0",
+            "text" : "Not enough minerals I see..."
          },
          "1" : {
             "gold" : "-100",
@@ -107,10 +107,10 @@
       },
       "yes" : {
          "0" : {
-            "gold" : "100",
-            "happiness" : "100",
-            "population" : "100",
-            "text" : "YES[0] TO CHANGE - 1"
+            "gold" : "-100",
+            "happiness" : "5",
+            "population" : "0",
+            "text" : "Thank you, these will be worth the wait"
          },
          "1" : {
             "gold" : "100",
