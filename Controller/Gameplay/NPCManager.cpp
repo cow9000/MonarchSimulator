@@ -39,7 +39,10 @@ void NPCManager::generateConfigFile(){
 
 		//0 false, 1 true
 
-		//NPCID, stillVisit
+		event["gold"] = "200";
+		event["population"] = "100";
+		event["happiness"] = "100";
+
 		for(int i = 0; i < 2000; i++){
 			event[std::to_string(i)]["stillVisit"] = "1";
 			event[std::to_string(i)]["timesVisited"] = "0";

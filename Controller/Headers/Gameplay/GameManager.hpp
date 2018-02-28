@@ -9,6 +9,7 @@
 #define CONTROLLER_GAMEPLAY_GAMEMANAGER_HPP_
 
 #include <string>
+#include <SFML/Graphics.hpp>
 
 namespace GameManager{
 	const std::string saveFileName = "data/SaveFile.json";

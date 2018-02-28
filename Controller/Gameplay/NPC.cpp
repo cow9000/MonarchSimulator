@@ -108,13 +108,14 @@ void NPC::loadData(){
 }
 
 void NPC::saveData(){
-
+	std::cout << "COUNT VISIT - " << GameSaveData[std::to_string(id)]["countVisit"].asString() << std::endl;
 	if(GameSaveData[std::to_string(id)]["countVisit"].asString() == "1"){
-		GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 1);
+		GameSaveData[std::to_string(id)]["timesVisited"] = std::to_string(std::stoi(GameSaveData[std::to_string(id)]["timesVisited"].asString()) + 5);
+		std::cout << GameSaveData[std::to_string(id)]["timesVisited"] << std::endl;
 	}
 
 	Json::StyledStreamWriter writer;
-	std::ofstream outFile;
+	std::fstream outFile;
 
 	outFile.open(GameManager::saveFileName);
 	writer.write(outFile, GameSaveData);
@@ -134,11 +135,9 @@ void NPC::update(sf::RenderTarget &renderWindow){
 	dialogText.setCharacterSize(20);
 	dialogText.setPosition(renderWindow.getSize().x - 300,60);
 
-	std::cout << "UPDATE" << std::endl;
 	if(rotate > 5 || rotate < -5){
 		reverseRotate = !reverseRotate;
 	}
-	std::cout << rotate << std::endl;
 
 	if(reverseRotate) rotate +=1;
 	else rotate -=1;
@@ -170,7 +169,6 @@ void NPC::update(sf::RenderTarget &renderWindow){
 		if(dialogTextTimeLimiterTemp >= dialogTextTimeLimiter){
 			if(dialogString.at(dialogTextShown) == '.' || dialogString.at(dialogTextShown) == '!' || dialogString.at(dialogTextShown) == '?'){
 				dialogTextTimeLimiter = 24;
-				std::cout << "TIME LIMITEr" << std::endl;
 			}else{
 				dialogTextTimeLimiter = dialogTextTimeLimiterDefault;
 			}
@@ -184,7 +182,6 @@ void NPC::update(sf::RenderTarget &renderWindow){
 					talk.play();
 				}
 
-				std::cout << "DRAW" << std::endl;
 				if(dialogTextShown >= dialogString.length()-1){
 					doneDrawingDialog = true;
 				}else{

@@ -1,10 +1,10 @@
 {
 	"0" : 
 	{
-		"countVisit" : "1",
+		"countVisit" : "0",
 		"randomizedDialog" : "0",
 		"stillVisit" : "1",
-		"timesVisited" : "1"
+		"timesVisited" : "0"
 	},
 	"1" : 
 	{
@@ -7788,7 +7788,7 @@
 		"countVisit" : "0",
 		"randomizedDialog" : "0",
 		"stillVisit" : "1",
-		"timesVisited" : "1"
+		"timesVisited" : "0"
 	},
 	"20" : 
 	{
@@ -13998,5 +13998,1510 @@
 		"randomizedDialog" : "0",
 		"stillVisit" : "1",
 		"timesVisited" : "0"
-	}
+	},
+	"gold" : "100",
+	"happiness" : "100",
+	"population" : "100"
+}
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "775" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "776" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "777" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "778" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "779" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "78" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "780" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "781" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "782" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "783" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "784" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "785" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "786" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "787" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "788" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "789" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "79" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "790" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "791" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "792" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "793" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "794" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "795" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "796" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "797" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "798" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "799" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "8" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "80" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "800" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "801" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "802" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "803" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "804" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "805" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "806" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "807" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "808" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "809" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "81" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "810" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "811" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "812" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "813" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "814" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "815" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "816" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "817" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "818" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "819" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "82" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "820" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "821" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "822" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "823" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "824" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "825" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "826" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "827" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "828" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "829" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "83" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "830" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "831" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "832" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "833" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "834" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "835" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "836" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "837" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "838" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "839" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "84" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "840" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "841" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "842" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "843" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "844" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "845" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "846" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "847" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "848" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "849" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "85" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "850" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "851" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "852" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "853" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "854" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "855" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "856" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "857" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "858" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "859" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "86" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "860" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "861" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "862" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "863" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "864" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "865" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "866" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "867" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "868" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "869" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "87" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "870" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "871" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "872" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "873" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "874" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "875" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "876" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "877" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "878" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "879" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "88" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "880" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "881" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "882" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "883" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "884" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "885" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "886" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "887" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "888" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "889" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "89" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "890" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "891" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "892" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "893" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "894" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "895" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "896" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "897" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "898" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "899" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "9" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "90" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "900" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "901" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "902" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "903" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "904" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "905" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "906" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "907" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "908" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "909" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "91" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "910" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "911" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "912" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "913" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "914" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "915" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "916" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "917" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "918" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "919" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "92" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "920" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "921" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "922" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "923" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "924" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "925" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "926" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "927" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "928" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "929" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "93" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "930" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "931" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "932" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "933" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "934" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "935" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "936" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "937" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "938" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "939" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "94" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "940" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "941" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "942" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "943" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "944" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "945" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "946" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "947" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "948" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "949" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "95" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "950" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "951" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "952" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "953" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "954" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "955" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "956" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "957" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "958" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "959" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "96" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "960" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "961" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "962" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "963" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "964" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "965" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "966" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "967" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "968" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "969" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "97" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "970" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "971" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "972" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "973" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "974" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "975" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "976" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "977" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "978" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "979" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "98" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "980" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "981" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "982" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "983" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "984" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "985" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "986" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "987" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "988" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "989" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "99" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "990" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "991" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "992" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "993" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "994" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "995" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "996" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "997" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "998" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "999" : {
+      "countVisit" : "0",
+      "randomizedDialog" : "0",
+      "stillVisit" : "1",
+      "timesVisited" : "0"
+   },
+   "gold" : "100",
+   "happiness" : "100",
+   "population" : "100"
 }

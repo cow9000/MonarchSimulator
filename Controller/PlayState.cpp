@@ -7,7 +7,6 @@
 //
 
 #include "Headers/PlayState.hpp"
-#include <iostream>
 
 PlayState::PlayState(StateManager* stateManager){
 
@@ -22,9 +21,12 @@ PlayState::PlayState(StateManager* stateManager){
 	this->stateManager = stateManager;
 	this->changeWindowSize = false;
 
-	this->population = 100;
-	this->happiness = 105;
-	this->gold = 200;
+	std::ifstream file2(GameManager::saveFileName);
+	file2 >> GameSaveData;
+
+	this->population = std::stoi(GameSaveData["population"].asString());
+	this->happiness = std::stoi(GameSaveData["happiness"].asString());
+	this->gold = std::stoi(GameSaveData["gold"].asString());
 	this->minHappiness = 80 + (population/5);
 
 

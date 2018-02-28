@@ -11,6 +11,8 @@
 
 
 #include <SFML/Audio.hpp>
+#include <iostream>
+#include "Gameplay/GameManager.hpp"
 #include "State.hpp"
 #include "Gameplay/NPCManager.hpp"
 
@@ -82,7 +84,7 @@ private:
     sf::SoundBuffer soundBuffer3;
     sf::Sound sound3;
 
-
+    Json::Value GameSaveData;
 
 };
 
