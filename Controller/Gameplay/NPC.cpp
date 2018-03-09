@@ -2,12 +2,12 @@
  * NPC.cpp
  *
  *  Created on: Feb 23, 2018
- *      Author: Derek
  */
 
 #include "../Headers/Gameplay/NPC.hpp"
 #include "../Headers/Gameplay/GameManager.hpp"
 
+//PherricOxide on stackoverflow
 inline bool file_exists (const std::string& name) {
   struct stat buffer;
   return (stat (name.c_str(), &buffer) == 0);

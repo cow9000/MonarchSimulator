@@ -15,6 +15,7 @@
 #include "Gameplay/GameManager.hpp"
 #include "State.hpp"
 #include "Gameplay/NPCManager.hpp"
+#include "Gameplay/Block.hpp"
 
 
 class PlayState : public State {
@@ -43,6 +44,10 @@ private:
     //Rotate 15 then rotate to -15
     bool backwards;
     int rotateYesOrNo;
+
+
+    sf::Clock addedTimer;
+    std::vector<Block> movingBlocks;
 
     //dusk/night
     bool isDusk;

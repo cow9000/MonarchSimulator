@@ -24,7 +24,6 @@ NPCManager::NPCManager(Json::Value* GameSaveData) {
 	this->NpcNumber = 0;
 	generateConfigFile();
 	newDay();
-
 }
 
 void NPCManager::generateConfigFile(){
