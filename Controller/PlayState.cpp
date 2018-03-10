@@ -118,6 +118,7 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 				int randomNumber = std::rand() %3 + 1;
 				if(chosenYes){
 					if(!haveSentChosenSignal){
+						movingBlocks.clear();
 						soundBuffer1.loadFromFile("Assets/Gameplay/Soundfiles/yes" + std::to_string(randomNumber) + ".ogg");
 						sound1.setBuffer(soundBuffer1);
 						sound1.play();
@@ -129,6 +130,29 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->happiness += manager->returnCurrentNPC()->returnHappiness();
 						this->gold += manager->returnCurrentNPC()->returnGold();
 						this->population += manager->returnCurrentNPC()->returnPopulation();
+						//Add blocks
+						for(int i = 0; i < 50; i++){
+							if(i < 15){
+								if(manager->returnCurrentNPC()->returnHappiness() > 0){
+									movingBlocks.push_back(new Block(true, 0, sf::Vector2f(0,1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 0, sf::Vector2f(0,1)));
+								}
+							}else if(i < 35){
+								if(manager->returnCurrentNPC()->returnGold() > 0){
+									movingBlocks.push_back(new Block(true, 1, sf::Vector2f(0,1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 1, sf::Vector2f(0,1)));
+								}
+							}else{
+								if(manager->returnCurrentNPC()->returnPopulation() > 0){
+									movingBlocks.push_back(new Block(true, 2, sf::Vector2f(0,1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 2, sf::Vector2f(0,1)));
+								}
+							}
+						}
+
 					}
 				}else if(chosenNo){
 					if(!haveSentChosenSignal){

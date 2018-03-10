@@ -12,11 +12,16 @@
 
 class Block{
 public:
-	Block(bool positive, int direction);
+	Block(bool positive, int type, sf::Vector2f movement);
+
+	void update();
 
 	bool getPositive(){return positive;}
+	sf::Vector2f getAddedPosition(){return addedPosition;}
 private:
 	bool positive;
+	int type;
+	sf::Vector2f movement;
 	sf::Vector2f addedPosition;
 };
 

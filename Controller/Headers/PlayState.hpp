@@ -47,7 +47,7 @@ private:
 
 
     sf::Clock addedTimer;
-    std::vector<Block> movingBlocks;
+    std::vector<Block*> movingBlocks;
 
     //dusk/night
     bool isDusk;
