@@ -91,6 +91,8 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     	}
     }
 }
+
+//startAbstraction
 void PlayState::updateState(sf::RenderTarget &renderWindow){
 
 	popText.setString(std::to_string(population));
@@ -190,6 +192,8 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 	}
 
 }
+//endAbstraction
+
 void PlayState::renderState(sf::RenderTarget &renderWindow){
 
 	//Draw background stuff
