@@ -24,7 +24,7 @@ Controller::Controller(){
 	//Start the game
     start();
 }
-
+//startAbstraction
 void Controller::start(){
 
     sf::Clock fpsClock;
@@ -49,6 +49,7 @@ void Controller::start(){
 
 
 }
+//endAbstraction
 
 void Controller::processWindow(){
     
