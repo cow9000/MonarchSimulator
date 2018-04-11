@@ -9,7 +9,7 @@
 
 Block::Block(bool positive, int type, sf::Vector2f movement){
 	this->addedPosition.x = rand()%100;
-	this->addedPosition.y = rand()%100;
+	this->addedPosition.y = -20;
 	this->positive = positive;
 	this->type = type;
 	this->movement = movement;
@@ -21,7 +21,7 @@ Block::Block(bool positive, int type, sf::Vector2f movement){
 void Block::update(){
 	life++;
 	addedPosition.x -= movement.x;
-	addedPosition.y -= movement.y;
+	addedPosition.y -= rand()%3;
 }
 
 

@@ -141,24 +141,24 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->population += manager->returnCurrentNPC()->returnPopulation();
 						//Add blocks
 						movingBlocks.clear();
-						for(int i = 0; i < happiness/3 + gold/3 + population/3; i++){
-							if(i < happiness/3){
+						for(int i = 0; i < abs(manager->returnCurrentNPC()->returnHappiness()/3) + abs(manager->returnCurrentNPC()->returnGold()/3) + abs(manager->returnCurrentNPC()->returnPopulation()/3); i++){
+							if(i < abs(manager->returnCurrentNPC()->returnHappiness()/3)){
 								if(manager->returnCurrentNPC()->returnHappiness() > 0){
-									movingBlocks.push_back(new Block(true, 0, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(true, 0, sf::Vector2f(0,rand()%3 + 1)));
 								}else{
-									movingBlocks.push_back(new Block(false, 0, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(false, 0, sf::Vector2f(0,rand()%3 + 1)));
 								}
-							}else if(i < gold/3){
+							}else if(i < abs(manager->returnCurrentNPC()->returnGold()/3)){
 								if(manager->returnCurrentNPC()->returnGold() > 0){
-									movingBlocks.push_back(new Block(true, 1, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(true, 1, sf::Vector2f(0,rand()%3 + 1)));
 								}else{
-									movingBlocks.push_back(new Block(false, 1, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(false, 1, sf::Vector2f(0,rand()%3 + 1)));
 								}
 							}else{
 								if(manager->returnCurrentNPC()->returnPopulation() > 0){
-									movingBlocks.push_back(new Block(true, 2, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(true, 2, sf::Vector2f(0,rand()%3 + 1)));
 								}else{
-									movingBlocks.push_back(new Block(false, 2, sf::Vector2f(0,1)));
+									movingBlocks.push_back(new Block(false, 2, sf::Vector2f(0,rand()%3 + 1)));
 								}
 							}
 						}
@@ -180,6 +180,30 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->happiness += manager->returnCurrentNPC()->returnHappiness();
 						this->gold += manager->returnCurrentNPC()->returnGold();
 						this->population += manager->returnCurrentNPC()->returnPopulation();
+
+						movingBlocks.clear();
+						for(int i = 0; i < abs(manager->returnCurrentNPC()->returnHappiness()/3) + abs(manager->returnCurrentNPC()->returnGold()/3) + abs(manager->returnCurrentNPC()->returnPopulation()/3); i++){
+							if(i < abs(manager->returnCurrentNPC()->returnHappiness()/3)){
+								if(manager->returnCurrentNPC()->returnHappiness() > 0){
+									movingBlocks.push_back(new Block(true, 0, sf::Vector2f(0,rand()%3 + 1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 0, sf::Vector2f(0,rand()%3 + 1)));
+								}
+							}else if(i < abs(manager->returnCurrentNPC()->returnGold()/3)){
+								if(manager->returnCurrentNPC()->returnGold() > 0){
+									movingBlocks.push_back(new Block(true, 1, sf::Vector2f(0,rand()%3 + 1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 1, sf::Vector2f(0,rand()%3 + 1)));
+								}
+							}else{
+								if(manager->returnCurrentNPC()->returnPopulation() > 0){
+									movingBlocks.push_back(new Block(true, 2, sf::Vector2f(0,rand()%3 + 1)));
+								}else{
+									movingBlocks.push_back(new Block(false, 2, sf::Vector2f(0,rand()%3 + 1)));
+								}
+							}
+						}
+
 					}
 				}else if(showYesOrNo == false && chosenYes==false && chosenNo == false)showYesOrNo = true;
 
@@ -420,21 +444,25 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 	//Draw blocks
 	for(int i = 0; i < movingBlocks.size(); i++){
 		Block *block = movingBlocks.at(i);
-		block->update();
-		sf::Texture* texture;
-		//Happiness, Gold, POpulation
-		if(block->getType() == 0 && block->getPositive()) texture = &happinessPositive;
-		else if(block->getType() == 0 && !block->getPositive()) texture = &happinessNegative;
-		else if(block->getType() == 1 && block->getPositive()) texture = &goldPositive;
-		else if(block->getType() == 1 && !block->getPositive()) texture = &goldNegative;
-		else if(block->getType() == 2 && block->getPositive()) texture = &populationPositive;
-		else if(block->getType() == 2 && !block->getPositive()) texture = &populationNegative;
-		sf::Sprite blockSprite;
-		blockSprite.setTexture(*texture);
 		sf::Vector2f position = block->getAddedPosition();
-		position.y = position.y + renderWindow.getSize().y-blockSprite.getLocalBounds().height-10;
-		blockSprite.setPosition(position);
-		if(!(block->getLife() > 20)) renderWindow.draw(blockSprite);
+		if(!(position.y < -50)){
+			block->update();
+			sf::Texture* texture;
+			//Happiness, Gold, POpulation
+			if(block->getType() == 0 && block->getPositive()) texture = &happinessPositive;
+			else if(block->getType() == 0 && !block->getPositive()) texture = &happinessNegative;
+			else if(block->getType() == 1 && block->getPositive()) texture = &goldPositive;
+			else if(block->getType() == 1 && !block->getPositive()) texture = &goldNegative;
+			else if(block->getType() == 2 && block->getPositive()) texture = &populationPositive;
+			else if(block->getType() == 2 && !block->getPositive()) texture = &populationNegative;
+			sf::Sprite blockSprite;
+			blockSprite.setTexture(*texture);
+
+			position.y = position.y + renderWindow.getSize().y-GuiSprite.getLocalBounds().height-10;
+			blockSprite.setPosition(position);
+			blockSprite.setScale(3.0,3.0);
+			 renderWindow.draw(blockSprite);
+		}
 	}
 
 
