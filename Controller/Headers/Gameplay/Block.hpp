@@ -17,9 +17,12 @@ public:
 	void update();
 
 	bool getPositive(){return positive;}
+	int getType(){ return type;}
 	sf::Vector2f getAddedPosition(){return addedPosition;}
+	double getLife(){return life;}
 private:
 	bool positive;
+	double life;
 	int type;
 	sf::Vector2f movement;
 	sf::Vector2f addedPosition;

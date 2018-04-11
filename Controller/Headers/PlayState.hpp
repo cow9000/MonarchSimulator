@@ -27,6 +27,15 @@ public:
     void renderState(sf::RenderTarget &renderWindow);
     Json::Value& returnGameSaveData();
 private:
+
+	sf::Texture goldPositive;
+	sf::Texture goldNegative;
+	sf::Texture happinessPositive;
+	sf::Texture happinessNegative;
+	sf::Texture populationPositive;
+	sf::Texture populationNegative;
+
+
     void startOfDay();
     void endOfDay();
     bool dayEnd;

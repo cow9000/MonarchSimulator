@@ -57,6 +57,13 @@ PlayState::PlayState(StateManager* stateManager){
 	this->isNight = false;
 
 	this->dayEnd = false;
+
+	happinessNegative.loadFromFile("Assets/Gameplay/HappinessSmallNegative.png");
+	happinessPositive.loadFromFile("Assets/Gameplay/HappinessSmall.png");
+	goldNegative.loadFromFile("Assets/Gameplay/GoldSmallNegative.png");
+	goldPositive.loadFromFile("Assets/Gameplay/GoldSmall.png");
+	populationNegative.loadFromFile("Assets/Gameplay/PopulationSmallNegative.png");
+	populationPositive.loadFromFile("Assets/Gameplay/PopulationSmall.png");
 }
 
 
@@ -133,14 +140,15 @@ void PlayState::updateState(sf::RenderTarget &renderWindow){
 						this->gold += manager->returnCurrentNPC()->returnGold();
 						this->population += manager->returnCurrentNPC()->returnPopulation();
 						//Add blocks
-						for(int i = 0; i < 50; i++){
-							if(i < 15){
+						movingBlocks.clear();
+						for(int i = 0; i < happiness/3 + gold/3 + population/3; i++){
+							if(i < happiness/3){
 								if(manager->returnCurrentNPC()->returnHappiness() > 0){
 									movingBlocks.push_back(new Block(true, 0, sf::Vector2f(0,1)));
 								}else{
 									movingBlocks.push_back(new Block(false, 0, sf::Vector2f(0,1)));
 								}
-							}else if(i < 35){
+							}else if(i < gold/3){
 								if(manager->returnCurrentNPC()->returnGold() > 0){
 									movingBlocks.push_back(new Block(true, 1, sf::Vector2f(0,1)));
 								}else{
@@ -409,6 +417,25 @@ void PlayState::drawGUI(sf::RenderTarget &renderWindow){
 	renderWindow.draw(popText);
 	renderWindow.draw(happinessText);
 	renderWindow.draw(goldText);
+	//Draw blocks
+	for(int i = 0; i < movingBlocks.size(); i++){
+		Block *block = movingBlocks.at(i);
+		block->update();
+		sf::Texture* texture;
+		//Happiness, Gold, POpulation
+		if(block->getType() == 0 && block->getPositive()) texture = &happinessPositive;
+		else if(block->getType() == 0 && !block->getPositive()) texture = &happinessNegative;
+		else if(block->getType() == 1 && block->getPositive()) texture = &goldPositive;
+		else if(block->getType() == 1 && !block->getPositive()) texture = &goldNegative;
+		else if(block->getType() == 2 && block->getPositive()) texture = &populationPositive;
+		else if(block->getType() == 2 && !block->getPositive()) texture = &populationNegative;
+		sf::Sprite blockSprite;
+		blockSprite.setTexture(*texture);
+		sf::Vector2f position = block->getAddedPosition();
+		position.y = position.y + renderWindow.getSize().y-blockSprite.getLocalBounds().height-10;
+		blockSprite.setPosition(position);
+		if(!(block->getLife() > 20)) renderWindow.draw(blockSprite);
+	}
 
 
 }
