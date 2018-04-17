@@ -2,8 +2,8 @@
 //  Controller.cpp
 //  EvoSim
 //
-//  Created by Vawdrey, Derek on 1/24/18.
-//  Copyright © 2018 Vawdrey, Derek. All rights reserved.
+//  Created by a on 1/24/18.
+//  Copyright © 2018 a. All rights reserved.
 //
 
 #include "Headers/Controller.hpp"
